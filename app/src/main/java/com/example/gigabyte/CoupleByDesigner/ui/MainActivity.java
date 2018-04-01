@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     // SlidingTabLayout 객체 생성
     private SlidingTabLayout mTabLayout;
-    // 광고 이미지뷰 객체 생성
 
     // 탭 타이틀 배열
     private final String[] mTitles = {
@@ -43,46 +42,33 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     private int[] mIconUnselectIds = {
             R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
             R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect,
-            R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
-            R.mipmap.tab_contact_unselect};
+            R.mipmap.tab_home_unselect };
 
     // 탭이 선택되었을 때 보여줄 아이콘
     private int[] mIconSelectIds = {
             R.mipmap.tab_home_select, R.mipmap.tab_speech_select,
             R.mipmap.tab_contact_select, R.mipmap.tab_more_select,
-            R.mipmap.tab_home_select, R.mipmap.tab_speech_select,
-            R.mipmap.tab_contact_select};
+            R.mipmap.tab_home_select };
 
-    // 프래그먼트 전환을 위한 페이저 어댑터 생성
-    private MyPagerAdapter mAdapter;
+    // 메인 화면 프래그먼트 전환을 위한 페이저 어댑터 생성
+    private MainPagerAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 반복문을 돌려서 mFragment 리스트와 mTabEntities 리스트에 아이템을 추가해준다.
-        for (int i = 0; i < mTitles.length; i++) {
+        initData();
 
-            /* SimpleCardFragment의 getInstance메소드에 mTitles[i]의 문자열을 전달함
-            그러면 SimpleCardFragment는 mTitles[i]의 문자열을 받아서 각 프래그먼트에
-            뿌려준다. 반환값은 SimpleCardFragment임. */
-            mFragments.add(SimpleCardFragment.getInstance(mTitles[i]));
-            /* new 키워드를 통해서 TabEntity 객체를 계속 생성한다. 객체가 생성될 때마다 호출되는
-            생성자에 매개변수로 mTitles[i], mIconSelectId[i], mIconUnselected[i]를 전달한다.
-            그러면 각 TabEntity 객체에 전달받아 TabEntity안에 있는 변수에 저장한다.
-             */
-            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
-        }
 
         // 액티비티에 붙어져 있는 뷰의 객체를 가져와서 decorView에 저장하는 듯하다.
         View decorView = getWindow().getDecorView();
         /* ViewFindUtils의 find메소드로 decorView 객체와 뷰페이저의 id를 넘긴다.
         참고로 ViewFindUtils에는 findViewId를 재정의하였음.
          */
-        ViewPager vp = ViewFindUtils.find(decorView, R.id.vp);
+        ViewPager vp = ViewFindUtils.find(decorView, R.id.vp_main_page);
         // mAdapter에 프래그먼트 전환이 가능하도록 세팅하는 듯
-        mAdapter = new MyPagerAdapter(getSupportFragmentManager());
+        mAdapter = new MainPagerAdapter(getSupportFragmentManager());
         // 전환이 가능한 어댑터를 ViewPager객체의 vp에 달아준다.
         vp.setAdapter(mAdapter);
 
@@ -109,10 +95,10 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
     }
 
-    private class MyPagerAdapter extends FragmentPagerAdapter {
+    private class MainPagerAdapter extends FragmentPagerAdapter {
 
         // 기본적으로 만들어지는 생성자
-        public MyPagerAdapter(FragmentManager fm) {
+        public MainPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
@@ -128,10 +114,31 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
             return mTitles[position];
         }
 
+        // 해당하는 포지션에 있는 프래그먼트를 가져와 반환.
         @Override
         public Fragment getItem(int position) {
-            // 해당하는 포지션에 있는 프래그먼트를 가져와 반환.
             return mFragments.get(position);
         }
+    }
+
+    private void initData() {
+        // 반복문을 돌려서 mFragment 리스트와 mTabEntities 리스트에 아이템을 추가해준다.
+        for (int i = 0; i < mTitles.length; i++) {
+
+            /* new 키워드를 통해서 TabEntity 객체를 계속 생성한다. 객체가 생성될 때마다 호출되는
+            생성자에 매개변수로 mTitles[i], mIconSelectId[i], mIconUnselected[i]를 전달한다.
+            그러면 각 TabEntity 객체에 전달받아 TabEntity안에 있는 변수에 저장한다.
+             */
+            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
+        }
+
+        /* SimpleCardFragment의 getInstance메소드에 mTitles[idx]의 문자열을 전달함
+            그러면 SimpleCardFragment는 mTitles[i]의 문자열을 받아서 각 프래그먼트에
+            뿌려준다. 반환값은 SimpleCardFragment임. */
+        mFragments.add(FragmentOnePage.getInstance());
+        mFragments.add(SimpleCardFragment.getInstance(mTitles[1]));
+        mFragments.add(SimpleCardFragment.getInstance(mTitles[2]));
+        mFragments.add(SimpleCardFragment.getInstance(mTitles[3]));
+        mFragments.add(SimpleCardFragment.getInstance(mTitles[4]));
     }
 }

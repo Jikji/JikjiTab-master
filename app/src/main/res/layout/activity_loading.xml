@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoadingActivity">
+    tools:context=".ui.LoadingActivity"
+    android:background="@color/pinkTheme">
 
     <ImageView
         android:id="@+id/iv_ani_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="207.5dp"/>
 
-    <TextView
-        android:id="@+id/tv_loading"
+    <ImageView
+        android:id="@+id/iv_text_loading"
         android:layout_below="@+id/iv_ani_loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Loading Activity"
-        android:layout_marginTop="15dp"
-        android:layout_centerInParent="true"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:layout_width="232.5dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="32.5dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/text_loading"/>
 
 </RelativeLayout>

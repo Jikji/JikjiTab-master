@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     // 커스텀 탭 인터페이스 ArrayList 생성
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-    // SlidingTabLayout 객체 생성
+    // SlidingTabLayout (라이브러리) 객체 생성
     private SlidingTabLayout mTabLayout;
 
-    // 탭 타이틀 배열
+    // 탭 제목 배열
     private final String[] mTitles = {
             "홈", "이벤트 & 기획", "Couple 놀이터"
             , "유저 게시판", "제휴 문의"
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 프래그먼트 초기화
         initData();
-
 
         // 액티비티에 붙어져 있는 뷰의 객체를 가져와서 decorView에 저장하는 듯하다.
         View decorView = getWindow().getDecorView();
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         참고로 ViewFindUtils에는 findViewId를 재정의하였음.
          */
         ViewPager vp = ViewFindUtils.find(decorView, R.id.vp_main_page);
-        // mAdapter에 프래그먼트 전환이 가능하도록 세팅하는 듯
+        // mAdapter에 프래그먼트 전환이 가능하도록 매니저를 달아준다.
         mAdapter = new MainPagerAdapter(getSupportFragmentManager());
         // 전환이 가능한 어댑터를 ViewPager객체의 vp에 달아준다.
         vp.setAdapter(mAdapter);
@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         // 슬라이드 시킬 프래그먼트 갯수
         @Override
         public int getCount() {
+            //  mFragments가 ArrayList<> 형식이기 때문에 들어간 아이템 수 만큼 반환
             return mFragments.size();
         }
 

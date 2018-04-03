@@ -19,6 +19,8 @@ import com.example.gigabyte.CoupleByDesigner.utils.ViewFindUtils;
 
 import java.util.ArrayList;
 
+/** 메인 화면 */
+
 public class MainActivity extends AppCompatActivity implements OnTabSelectListener {
 
     /** 변수 선언*/
@@ -133,9 +135,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
 
-        /* SimpleCardFragment의 getInstance메소드에 mTitles[idx]의 문자열을 전달함
-            그러면 SimpleCardFragment는 mTitles[i]의 문자열을 받아서 각 프래그먼트에
-            뿌려준다. 반환값은 SimpleCardFragment임. */
+        /* mFragments에 생성한 프래그먼트를 추가한다. */
         mFragments.add(FragmentOnePage.getInstance());
         mFragments.add(SimpleCardFragment.getInstance(mTitles[1]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[2]));

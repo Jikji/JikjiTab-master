@@ -11,6 +11,7 @@ import com.example.gigabyte.CoupleByDesigner.R;
 
 /**
  * Created by Park on 2018-03-31.
+ * 광고판 1 프래그먼트
  */
 
 public class FragmentAd1 extends Fragment {

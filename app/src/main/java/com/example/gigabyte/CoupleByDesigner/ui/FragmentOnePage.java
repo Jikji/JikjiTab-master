@@ -14,6 +14,7 @@ import com.example.gigabyte.CoupleByDesigner.R;
 
 /**
  * Created by gigabyte on 2018-03-29.
+ * 메인 액티비티의 첫번째 프래그먼트
  */
 
 public class FragmentOnePage extends Fragment {

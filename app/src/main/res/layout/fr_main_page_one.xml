@@ -35,21 +35,21 @@
                     android:id="@+id/ib_home_best1"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:background="@drawable/img_home_grouplook1" />
 
                 <ImageButton
                     android:id="@+id/ib_home_best2"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:background="@drawable/img_home_grouplook2"/>
 
                 <ImageButton
                     android:id="@+id/ib_home_best3"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:background="@drawable/img_home_grouplook3"/>
 
             </LinearLayout>
@@ -74,22 +74,61 @@
                     android:id="@+id/ib_home_sale1"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:background="@drawable/img_home_grouplook4"/>
 
                 <ImageButton
                     android:id="@+id/ib_home_sale2"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:background="@drawable/img_home_grouplook5"/>
 
                 <ImageButton
                     android:id="@+id/ib_home_sale3"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:background="@drawable/img_home_grouplook6"/>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/ib_home_md"
+                android:layout_width="650px"
+                android:layout_height="132px"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_home_md"
+                android:layout_below="@id/layout_home_sale"/>
+
+            <LinearLayout
+                android:id="@+id/layout_home_md"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/ib_home_md">
+
+                <ImageButton
+                    android:id="@+id/ib_home_md1"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="150dp"
+                    android:background="@drawable/img_home_grouplook7"/>
+
+                <ImageButton
+                    android:id="@+id/ib_home_md2"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="150dp"
+                    android:background="@drawable/img_home_grouplook8"/>
+
+                <ImageButton
+                    android:id="@+id/ib_home_md3"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="150dp"
+                    android:background="@drawable/img_home_grouplook9"/>
 
             </LinearLayout>
 
@@ -99,7 +138,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:textSize="18sp"
-                android:layout_below="@+id/layout_home_sale"/>
+                android:layout_below="@+id/layout_home_md"/>
 
         </RelativeLayout>
 

@@ -1,6 +1,8 @@
 package com.example.gigabyte.CoupleByDesigner.ui;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,6 +10,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.flyco.tablayout.SlidingTabLayout;
@@ -19,11 +23,15 @@ import com.example.gigabyte.CoupleByDesigner.utils.ViewFindUtils;
 
 import java.util.ArrayList;
 
-/** 메인 화면 */
+/**
+ * 메인 화면
+ */
 
 public class MainActivity extends AppCompatActivity implements OnTabSelectListener {
 
-    /** 변수 선언*/
+    /**
+     * 변수 선언
+     */
 
     // 현재 컨텍스트를 자기 자신으로 선언
     private Context mContext = this;
@@ -44,14 +52,15 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     private int[] mIconUnselectIds = {
             R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
             R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect,
-            R.mipmap.tab_home_unselect };
+            R.mipmap.tab_home_unselect};
 
     // 탭이 선택되었을 때 보여줄 아이콘
     private int[] mIconSelectIds = {
             R.mipmap.tab_home_select, R.mipmap.tab_speech_select,
             R.mipmap.tab_contact_select, R.mipmap.tab_more_select,
-            R.mipmap.tab_home_select };
+            R.mipmap.tab_home_select};
 
+//    private ArrayList<ImageButton> mButtons = new ArrayList<>();
     // 메인 화면 프래그먼트 전환을 위한 페이저 어댑터 생성
     private MainPagerAdapter mAdapter;
 
@@ -97,6 +106,13 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
     }
 
+    /*@Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.ib_home_best1) {
+            Toast.makeText(this, "테스트 성공", Toast.LENGTH_LONG);
+        }
+    }*/
+
     private class MainPagerAdapter extends FragmentPagerAdapter {
 
         // 기본적으로 만들어지는 생성자
@@ -141,5 +157,14 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         mFragments.add(SimpleCardFragment.getInstance(mTitles[2]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[3]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[4]));
+
+        /*mButtons.add((ImageButton)findViewById(R.id.ib_home_best));
+        mButtons.add((ImageButton)findViewById(R.id.ib_home_best1));
+        mButtons.add((ImageButton)findViewById(R.id.ib_home_best2));
+        mButtons.add((ImageButton)findViewById(R.id.ib_home_best3));
+
+        for (int i = 0; i < mButtons.size(); i++) {
+            mButtons.get(i).setOnClickListener(this);
+        }*/
     }
 }

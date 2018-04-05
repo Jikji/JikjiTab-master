@@ -4,9 +4,9 @@
     
     <ImageView
         android:id="@+id/iv_ad_three"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/image_ad_three"
+        android:layout_width="360dp"
+        android:layout_height="187.5dp"
+        android:src="@drawable/img_home_ad3"
         android:background="#000000"/>
 
 </RelativeLayout>

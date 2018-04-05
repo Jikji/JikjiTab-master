@@ -145,7 +145,7 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="100dp"
-            android:background="@color/colorPrimaryDark_Pink" />
+            android:background="#F44" />
 
         <Button
             android:id="@+id/btn_theme_blue"
@@ -154,7 +154,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="100dp"
-            android:background="@color/colorPrimaryDark_Blue"/>
+            android:background="#1BADB5"/>
     </RelativeLayout>
 
 

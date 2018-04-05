@@ -2,10 +2,10 @@
 <resources>
     <!--PinkTheme-->
     <color name="colorPrimary_Pink">#F66</color>
-    <color name="colorPrimaryDark_Pink">#F44</color>
+    <color name="colorPrimaryDark_Pink">#000</color>
     <color name="colorAccent_Pink">#FFF</color>
     <!--BlueTheme-->
     <color name="colorPrimary_Blue">#01D8E5</color>
-    <color name="colorPrimaryDark_Blue">#1BADB5</color>
+    <color name="colorPrimaryDark_Blue">#000</color>
     <color name="colorAccent_Blue">#FFF</color>
 </resources>

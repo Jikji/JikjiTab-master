@@ -48,15 +48,15 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
     // 탭이 선택되지 않았을 때 보여줄 아이콘
     private int[] mIconUnselectIds = {
-            R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
-            R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect,
-            R.mipmap.tab_home_unselect};
+            R.mipmap.tab_main_home_unselect, R.mipmap.tab_main_event_unselect,
+            R.mipmap.tab_main_playground_unselect, R.mipmap.tab_main_bulletin_unselect,
+            R.mipmap.tab_main_cooperation_unselect};
 
     // 탭이 선택되었을 때 보여줄 아이콘
     private int[] mIconSelectIds = {
-            R.mipmap.tab_home_select, R.mipmap.tab_speech_select,
-            R.mipmap.tab_contact_select, R.mipmap.tab_more_select,
-            R.mipmap.tab_home_select};
+            R.mipmap.tab_main_home_select, R.mipmap.tab_main_event_select,
+            R.mipmap.tab_main_playground_select, R.mipmap.tab_main_bulletin_select,
+            R.mipmap.tab_main_cooperation_select};
 
 
 
@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppTheme_Blue);
         setContentView(R.layout.activity_main);
 
         // 각종 데이터 초기화 (탭, 프래그먼트를 초기화함)

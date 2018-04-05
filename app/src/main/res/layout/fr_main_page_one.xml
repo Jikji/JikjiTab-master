@@ -14,13 +14,13 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/vp_fragment_page_one"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="190dp" />
 
             <ImageButton
                 android:id="@+id/ib_home_best"
                 android:layout_width="520px"
                 android:layout_height="132px"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/btb_home_best"
                 android:layout_below="@id/vp_fragment_page_one"/>
 
@@ -29,7 +29,7 @@
                 android:layout_below="@id/ib_home_best"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <ImageButton
@@ -59,7 +59,7 @@
                 android:id="@+id/ib_home_sale"
                 android:layout_width="650px"
                 android:layout_height="132px"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/btn_home_sale"
                 android:layout_below="@id/layout_home_best"/>
 
@@ -67,7 +67,7 @@
                 android:id="@+id/layout_home_sale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal"
                 android:layout_below="@id/ib_home_sale">
 
@@ -98,7 +98,7 @@
                 android:id="@+id/ib_home_md"
                 android:layout_width="650px"
                 android:layout_height="132px"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/btn_home_md"
                 android:layout_below="@id/layout_home_sale"/>
 
@@ -106,7 +106,7 @@
                 android:id="@+id/layout_home_md"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal"
                 android:layout_below="@id/ib_home_md">
 
@@ -132,14 +132,6 @@
                     android:background="@drawable/img_home_grouplook9"/>
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_fragment_page_one"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:layout_below="@+id/layout_home_md"/>
 
         </RelativeLayout>
     </ScrollView>

@@ -8,7 +8,9 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.gigabyte.CoupleByDesigner.R;
 
@@ -17,25 +19,34 @@ import com.example.gigabyte.CoupleByDesigner.R;
  * 메인 액티비티의 첫번째 프래그먼트
  */
 
-public class FragmentOnePage extends Fragment {
-    private String mTitle;
+// View.OnClickListener를 implements 해줬기 때문에 그 안에 있는 메소드를 구현해야 함. OnClick();
+public class FragmentOnePage extends Fragment implements View.OnClickListener {
+
     private ViewPager mAdViewPager;
     private FragmentPagerAdapter mAdAdapter;
     private Fragment[] mAdFragment;
 
+    private int[] mImageButtonID = {R.id.ib_home_best, R.id.ib_home_best1, R.id.ib_home_best2
+            , R.id.ib_home_best3, R.id.ib_home_sale, R.id.ib_home_sale1, R.id.ib_home_sale2
+            , R.id.ib_home_sale3, R.id.ib_home_md, R.id.ib_home_md1, R.id.ib_home_md2
+            , R.id.ib_home_md3};
+
+    private ImageButton imageButton;
+
+    private View mRootView;
+
     public static FragmentOnePage getInstance() {
         FragmentOnePage mFragOnePage = new FragmentOnePage();
-        mFragOnePage.mTitle = "Fragment_One_Page";
         return mFragOnePage;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.fr_main_page_one, container, false);
+        mRootView = inflater.inflate(R.layout.fr_main_page_one, container, false);
 
         initData();
-        mAdViewPager = view.findViewById(R.id.vp_fragment_page_one);
+        mAdViewPager = mRootView.findViewById(R.id.vp_fragment_page_one);
         mAdAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
 
             @Override
@@ -76,10 +87,7 @@ public class FragmentOnePage extends Fragment {
 
         mAdViewPager.setAdapter(mAdAdapter);
 
-        TextView one_fragment_tv = (TextView) view.findViewById(R.id.tv_fragment_page_one);
-        one_fragment_tv.setText(mTitle);
-
-        return view;
+        return mRootView;
     }
 
     private void initData() {
@@ -87,5 +95,19 @@ public class FragmentOnePage extends Fragment {
         mAdFragment[0] = new FragmentAd1();
         mAdFragment[1] = new FragmentAd2();
         mAdFragment[2] = new FragmentAd3();
+
+        for (int id : mImageButtonID) {
+            imageButton = mRootView.findViewById(id);
+            imageButton.setOnClickListener(this);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.ib_home_best1 || v.getId() == R.id.ib_home_best2 || v.getId() == R.id.ib_home_best3) {
+            Toast.makeText(getActivity(), "bestButton 구현", Toast.LENGTH_SHORT).show();
+        } else if (v.getId() == R.id.ib_home_sale1) {
+            Toast.makeText(getActivity(), "saleButton 구현", Toast.LENGTH_SHORT).show();
+        }
     }
 }

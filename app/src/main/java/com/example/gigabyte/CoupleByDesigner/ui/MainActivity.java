@@ -1,7 +1,6 @@
 package com.example.gigabyte.CoupleByDesigner.ui;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,7 +9,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -60,16 +58,18 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
             R.mipmap.tab_contact_select, R.mipmap.tab_more_select,
             R.mipmap.tab_home_select};
 
-//    private ArrayList<ImageButton> mButtons = new ArrayList<>();
+
+
     // 메인 화면 프래그먼트 전환을 위한 페이저 어댑터 생성
     private MainPagerAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme_Blue);
         setContentView(R.layout.activity_main);
 
-        // 프래그먼트 초기화
+        // 각종 데이터 초기화 (탭, 프래그먼트를 초기화함)
         initData();
 
         // 액티비티에 붙어져 있는 뷰의 객체를 가져와서 decorView에 저장하는 듯하다.
@@ -105,13 +105,6 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         Toast.makeText(mContext, "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
 
     }
-
-    /*@Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.ib_home_best1) {
-            Toast.makeText(this, "테스트 성공", Toast.LENGTH_LONG);
-        }
-    }*/
 
     private class MainPagerAdapter extends FragmentPagerAdapter {
 
@@ -158,13 +151,6 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         mFragments.add(SimpleCardFragment.getInstance(mTitles[3]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[4]));
 
-        /*mButtons.add((ImageButton)findViewById(R.id.ib_home_best));
-        mButtons.add((ImageButton)findViewById(R.id.ib_home_best1));
-        mButtons.add((ImageButton)findViewById(R.id.ib_home_best2));
-        mButtons.add((ImageButton)findViewById(R.id.ib_home_best3));
 
-        for (int i = 0; i < mButtons.size(); i++) {
-            mButtons.get(i).setOnClickListener(this);
-        }*/
     }
 }

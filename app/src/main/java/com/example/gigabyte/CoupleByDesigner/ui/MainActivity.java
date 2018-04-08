@@ -1,7 +1,6 @@
 package com.example.gigabyte.CoupleByDesigner.ui;
 
 import android.content.Context;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,7 +8,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.flyco.tablayout.SlidingTabLayout;
@@ -48,15 +46,15 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
     // 탭이 선택되지 않았을 때 보여줄 아이콘
     private int[] mIconUnselectIds = {
-            R.mipmap.tab_main_home_unselect, R.mipmap.tab_main_event_unselect,
-            R.mipmap.tab_main_playground_unselect, R.mipmap.tab_main_bulletin_unselect,
-            R.mipmap.tab_main_cooperation_unselect};
+            R.mipmap.btn_tab_home_unselect, R.mipmap.btn_tab_event_unselect,
+            R.mipmap.btn_tab_playground_unselect, R.mipmap.btn_tab_bulletin_unselect,
+            R.mipmap.btn_tab_cooperation_unselect};
 
     // 탭이 선택되었을 때 보여줄 아이콘
-    private int[] mIconSelectIds = {
-            R.mipmap.tab_main_home_select, R.mipmap.tab_main_event_select,
-            R.mipmap.tab_main_playground_select, R.mipmap.tab_main_bulletin_select,
-            R.mipmap.tab_main_cooperation_select};
+    private int[] mIconSelectIdsPink = {
+            R.mipmap.btn_tab_home_select_pink, R.mipmap.btn_tab_event_select_pink,
+            R.mipmap.btn_tab_playground_select_pink, R.mipmap.btn_tab_bulletin_select_pink,
+            R.mipmap.btn_tab_cooperation_select_pink};
 
 
 
@@ -66,6 +64,11 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (LoadingActivity.mSetTheme == 0) {
+            setTheme(R.style.AppTheme);
+        } else if (LoadingActivity.mSetTheme == 1) {
+            setTheme(R.style.AppTheme_Blue);
+        }
         setContentView(R.layout.activity_main);
 
         // 각종 데이터 초기화 (탭, 프래그먼트를 초기화함)
@@ -140,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
             생성자에 매개변수로 mTitles[i], mIconSelectId[i], mIconUnselected[i]를 전달한다.
             그러면 각 TabEntity 객체에 전달받아 TabEntity안에 있는 변수에 저장한다.
              */
-            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
+            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIdsPink[i], mIconUnselectIds[i]));
         }
 
         /* mFragments에 생성한 프래그먼트를 추가한다. */
@@ -149,7 +152,5 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         mFragments.add(SimpleCardFragment.getInstance(mTitles[2]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[3]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[4]));
-
-
     }
 }

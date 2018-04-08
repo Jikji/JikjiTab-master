@@ -11,6 +11,41 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#fff"
+            android:elevation="4dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="21dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="13dp"
+                android:background="@drawable/img_actionbar_logo_pink"/>
+
+            <ImageView
+                android:layout_width="175dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginStart="92dp"
+                android:background="@drawable/edittext_actionbar_search_pink"/>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginStart="291dp"
+                android:background="@drawable/btn_actionbar_dipslist_pink"/>
+
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginStart="327dp"
+                android:background="@drawable/btn_actionbar_myinfo_pink"/>
+        </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +66,7 @@
                 tl:tl_indicator_margin_right="3dp"
                 tl:tl_iconHeight="18dp"
                 tl:tl_iconMargin="-10dp"
-                tl:tl_iconLeftMargin="13.75dp"
+                tl:tl_iconLeftMargin="13dp"
                 tl:tl_iconWidth="18dp"
                 tl:tl_underline_color="#888888"
                 tl:tl_underline_height="1.5dp" />
@@ -41,7 +76,7 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/vp_main_page"
             android:layout_width="match_parent"
-            android:layout_height="1822.5dp" />
+            android:layout_height="1830dp" />
 
     </LinearLayout>
 </ScrollView>

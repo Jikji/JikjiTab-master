@@ -30,6 +30,7 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
     private Button mBtnLoadingLogin;
     private Button mBtnThemePink;
     private Button mBtnThemeBlue;
+    private Button mBtnThemeOk;
     private RelativeLayout mActivityLoading;
     private RelativeLayout mGroupLoadingWidget;
     private RelativeLayout mGroupLoadingBtnTheme;
@@ -39,6 +40,8 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
     private Animation mAnimationMoveYTextView;
     private Animation mAnimationFadeInWidget;
     private Animation mAnimationFadeInBtnTheme;
+
+    public static int mSetTheme = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
         mBtnLoadingNext.setOnClickListener(this);
         mBtnThemePink.setOnClickListener(this);
         mBtnThemeBlue.setOnClickListener(this);
+        mBtnThemeOk.setOnClickListener(this);
 
         FadeOutGif();
 
@@ -84,6 +88,7 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
         mBtnLoadingNext = (Button) findViewById(R.id.btn_loading_next);
         mBtnThemePink = (Button) findViewById(R.id.btn_theme_pink);
         mBtnThemeBlue = (Button) findViewById(R.id.btn_theme_blue);
+        mBtnThemeOk = (Button) findViewById(R.id.btn_theme_ok);
 
         /* 이미지 뷰에 gif를 삽입하는 코드
          * implementation 'com.github.bumptech.glide:glide:3.7.0' 을 build.gradle에 포함해주어야 함.
@@ -199,8 +204,15 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
             finish();
         } else if (v.getId() == R.id.btn_theme_pink) {
             mActivityLoading.setBackgroundResource(R.color.colorPrimary_Pink);
+            mSetTheme = 0;
+
         } else if (v.getId() == R.id.btn_theme_blue) {
             mActivityLoading.setBackgroundResource(R.color.colorPrimary_Blue);
+            mSetTheme = 1;
+        } else if (v.getId() == R.id.btn_theme_ok) {
+            Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
         }
     }
 }

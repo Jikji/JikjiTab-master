@@ -1,12 +1,14 @@
 package com.flyco.tablayout;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -105,6 +107,8 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
     private float mIconMargin;
     private float mIconLeftMargin;
 
+    private Typeface mTypeface;
+
     public SlidingTabLayout(Context context) {
         this(context, null, 0);
     }
@@ -163,7 +167,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         mDividerWidth = ta.getDimension(R.styleable.SlidingTabLayout_tl_divider_width, dp2px(0));
         mDividerPadding = ta.getDimension(R.styleable.SlidingTabLayout_tl_divider_padding, dp2px(12));
 
-        mTextsize = ta.getDimension(R.styleable.SlidingTabLayout_tl_textsize, sp2px(14));
+        mTextsize = ta.getDimension(R.styleable.SlidingTabLayout_tl_textsize, sp2px(12));
         mTextSelectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textSelectColor, Color.parseColor("#FA5858"));
         mTextUnselectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textUnselectColor, Color.parseColor("#848484"));
         mTextBold = ta.getInt(R.styleable.SlidingTabLayout_tl_textBold, TEXT_BOLD_NONE);
@@ -293,6 +297,11 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
     private void addTab(final int position, String title, View tabView) {
         TextView tv_tab_title = (TextView) tabView.findViewById(R.id.tv_tab_title);
         ImageView iv_tab_image = (ImageView) tabView.findViewById(R.id.iv_tab_icon);
+
+        // 폰트 적용
+        mTypeface = Typeface.createFromAsset(mContext.getAssets(), "Fonts/NanumSquareR.otf");
+        tv_tab_title.setTypeface(mTypeface);
+
         if (tv_tab_title != null) {
             if (title != null) tv_tab_title.setText(title);
         }

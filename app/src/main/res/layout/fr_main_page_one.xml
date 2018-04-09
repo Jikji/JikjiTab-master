@@ -1,14 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
-    <!--탭 레이아웃 아래 스크롤 뷰-->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
 
         <!--스크롤 뷰 안의 RelativeLayout : 모든 UI의 최상위 레이아웃-->
         <RelativeLayout
@@ -21,7 +13,7 @@
                 android:id="@+id/vp_fragment_page_one"
                 android:layout_width="match_parent"
                 android:layout_height="187.5dp"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp" />
 
             <!--home best 이미지버튼-->
             <LinearLayout
@@ -37,8 +29,8 @@
                     android:id="@+id/ib_home_best"
                     android:layout_width="108.33dp"
                     android:layout_height="19dp"
-                    android:layout_marginTop="8dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/btn_home_best" />
             </LinearLayout>
 
@@ -54,25 +46,25 @@
                     android:id="@+id/ib_home_best1"
                     android:layout_width="wrap_content"
                     android:layout_height="130dp"
-                    android:layout_weight="1"
                     android:layout_marginStart="5.25dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_home_grouplook" />
 
                 <ImageButton
                     android:id="@+id/ib_home_best2"
                     android:layout_width="wrap_content"
                     android:layout_height="130dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="5.25dp"
                     android:layout_marginEnd="5.25dp"
+                    android:layout_marginStart="5.25dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_home_grouplook" />
 
                 <ImageButton
                     android:id="@+id/ib_home_best3"
                     android:layout_width="wrap_content"
                     android:layout_height="130dp"
-                    android:layout_weight="1"
                     android:layout_marginEnd="5.25dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_home_grouplook" />
             </LinearLayout>
 
@@ -90,8 +82,8 @@
                     android:id="@+id/ib_home_sale"
                     android:layout_width="135.33dp"
                     android:layout_height="19dp"
-                    android:layout_marginTop="8dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/btn_home_sale" />
             </LinearLayout>
 
@@ -107,25 +99,25 @@
                     android:id="@+id/ib_home_sale1"
                     android:layout_width="wrap_content"
                     android:layout_height="130dp"
-                    android:layout_weight="1"
                     android:layout_marginStart="5.25dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_home_grouplook" />
 
                 <ImageButton
                     android:id="@+id/ib_home_sale2"
                     android:layout_width="wrap_content"
                     android:layout_height="130dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="5.25dp"
                     android:layout_marginEnd="5.25dp"
+                    android:layout_marginStart="5.25dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_home_grouplook" />
 
                 <ImageButton
                     android:id="@+id/ib_home_sale3"
                     android:layout_width="wrap_content"
                     android:layout_height="130dp"
-                    android:layout_weight="1"
                     android:layout_marginEnd="5.25dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_home_grouplook" />
             </LinearLayout>
 
@@ -143,8 +135,8 @@
                     android:id="@+id/ib_home_md"
                     android:layout_width="124.66dp"
                     android:layout_height="19dp"
-                    android:layout_marginTop="8dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/btn_home_md" />
             </LinearLayout>
 
@@ -160,25 +152,25 @@
                     android:id="@+id/ib_home_md1"
                     android:layout_width="wrap_content"
                     android:layout_height="130dp"
-                    android:layout_weight="1"
                     android:layout_marginStart="5.25dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_home_grouplook" />
 
                 <ImageButton
                     android:id="@+id/ib_home_md2"
                     android:layout_width="wrap_content"
                     android:layout_height="130dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="5.25dp"
                     android:layout_marginEnd="5.25dp"
+                    android:layout_marginStart="5.25dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_home_grouplook" />
 
                 <ImageButton
                     android:id="@+id/ib_home_md3"
                     android:layout_width="wrap_content"
                     android:layout_height="130dp"
-                    android:layout_weight="1"
                     android:layout_marginEnd="5.25dp"
+                    android:layout_weight="1"
                     android:background="@drawable/btn_home_grouplook" />
             </LinearLayout>
 
@@ -196,25 +188,25 @@
                     android:id="@+id/ib_home_product1"
                     android:layout_width="wrap_content"
                     android:layout_height="196dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="3dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
 
                 <ImageButton
                     android:id="@+id/ib_home_product2"
                     android:layout_width="wrap_content"
                     android:layout_height="196dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="6dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
             </LinearLayout>
 
             <!--home product 두번째 줄-->
@@ -231,25 +223,25 @@
                     android:id="@+id/ib_home_product3"
                     android:layout_width="wrap_content"
                     android:layout_height="196dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="3dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
 
                 <ImageButton
                     android:id="@+id/ib_home_product4"
                     android:layout_width="wrap_content"
                     android:layout_height="196dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="6dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
             </LinearLayout>
 
             <!--home product 세번째 줄-->
@@ -266,25 +258,25 @@
                     android:id="@+id/ib_home_product5"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="3dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
 
                 <ImageButton
                     android:id="@+id/ib_home_product6"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="6dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
             </LinearLayout>
 
             <!--home product 네번째 줄-->
@@ -301,25 +293,25 @@
                     android:id="@+id/ib_home_product7"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="3dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
 
                 <ImageButton
                     android:id="@+id/ib_home_product8"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="6dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
             </LinearLayout>
 
             <!--home product 다섯번쩨 줄-->
@@ -336,25 +328,25 @@
                     android:id="@+id/ib_home_product9"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="3dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
 
                 <ImageButton
                     android:id="@+id/ib_home_product10"
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:layout_weight="1"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="6dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginBottom="6dp"
-                    android:background="@drawable/btn_home_product"
-                    android:layout_gravity="center_vertical"/>
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_home_product" />
             </LinearLayout>
 
             <!--하단 탭 레이아웃 대체 이미지 뷰어-->
@@ -364,52 +356,51 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/layout_home_product5"
                 android:background="#fff"
-                android:orientation="horizontal"
-                android:elevation="4dp">
+                android:elevation="4dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/iv_tab_main_bottom_home"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="9dp"
+                    android:layout_weight="1"
                     android:src="@mipmap/btn_bottom_home_select" />
 
                 <ImageView
                     android:id="@+id/iv_tab_main_bottom_couple"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="9dp"
-                    android:src="@mipmap/btn_bottom_couple_select" />
+                    android:layout_weight="1"
+                    android:src="@mipmap/btn_bottom_couple_unselect" />
 
                 <ImageView
                     android:id="@+id/iv_tab_main_bottom_day"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="9dp"
-                    android:src="@mipmap/btn_bottom_day_select" />
+                    android:layout_weight="1"
+                    android:src="@mipmap/btn_bottom_day_unselect" />
 
                 <ImageView
                     android:id="@+id/iv_tab_main_bottom_some"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="9dp"
-                    android:src="@mipmap/btn_bottom_some_select" />
+                    android:layout_weight="1"
+                    android:src="@mipmap/btn_bottom_some_unselect" />
 
                 <ImageView
                     android:id="@+id/iv_tab_main_bottom_all"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
-                    android:layout_weight="1"
                     android:layout_marginTop="9dp"
-                    android:src="@mipmap/btn_bottom_all_select" />
+                    android:layout_weight="1"
+                    android:src="@mipmap/btn_bottom_all_unselect" />
             </LinearLayout>
 
         </RelativeLayout>
 
-    </ScrollView>
 
 </RelativeLayout>

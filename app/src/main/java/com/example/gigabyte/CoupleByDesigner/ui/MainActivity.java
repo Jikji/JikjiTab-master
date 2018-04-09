@@ -1,13 +1,18 @@
 package com.example.gigabyte.CoupleByDesigner.ui;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.flyco.tablayout.SlidingTabLayout;
@@ -56,10 +61,11 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
             R.mipmap.btn_tab_playground_select_pink, R.mipmap.btn_tab_bulletin_select_pink,
             R.mipmap.btn_tab_cooperation_select_pink};
 
-
-
     // 메인 화면 프래그먼트 전환을 위한 페이저 어댑터 생성
     private MainPagerAdapter mAdapter;
+
+
+    private ViewPager vp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         /* ViewFindUtils의 find메소드로 decorView 객체와 뷰페이저의 id를 넘긴다.
         참고로 ViewFindUtils에는 findViewId를 재정의하였음.
          */
-        ViewPager vp = ViewFindUtils.find(decorView, R.id.vp_main_page);
+        vp = ViewFindUtils.find(decorView, R.id.vp_main_page);
         // mAdapter에 프래그먼트 전환이 가능하도록 매니저를 달아준다.
         mAdapter = new MainPagerAdapter(getSupportFragmentManager());
         // 전환이 가능한 어댑터를 ViewPager객체의 vp에 달아준다.
@@ -92,6 +98,8 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         mTabLayout.setViewPager(vp, mTitles, mTabEntities);
         // 시작 화면을 0페이지에 맞춘다,
         vp.setCurrentItem(0);
+
+
     }
 
     @Override

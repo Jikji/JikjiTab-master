@@ -1,15 +1,15 @@
 package com.example.gigabyte.CoupleByDesigner.ui;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gigabyte.CoupleByDesigner.R;
@@ -25,15 +25,15 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
     private ViewPager mAdViewPager;
     private FragmentPagerAdapter mAdAdapter;
     private Fragment[] mAdFragment;
-
     private int[] mImageButtonID = {R.id.ib_home_best, R.id.ib_home_best1, R.id.ib_home_best2
             , R.id.ib_home_best3, R.id.ib_home_sale, R.id.ib_home_sale1, R.id.ib_home_sale2
             , R.id.ib_home_sale3, R.id.ib_home_md, R.id.ib_home_md1, R.id.ib_home_md2
             , R.id.ib_home_md3};
-
     private ImageButton imageButton;
-
     private View mRootView;
+    private Thread mThread;
+    private Handler mHandler;
+    private int mPageNum = 0;
 
     public static FragmentOnePage getInstance() {
         FragmentOnePage mFragOnePage = new FragmentOnePage();
@@ -87,6 +87,9 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
 
         mAdViewPager.setAdapter(mAdAdapter);
 
+        /* 광고 뷰 페이저 자동 슬라이드 구현 */
+        AdViewPagerAuto();
+
         return mRootView;
     }
 
@@ -109,5 +112,41 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
         } else if (v.getId() == R.id.ib_home_sale1) {
             Toast.makeText(getActivity(), "saleButton 구현", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void AdViewPagerAuto() {
+
+        mHandler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                if (mPageNum == 0) {
+                    mAdViewPager.setCurrentItem(1);
+                    mPageNum++;
+                }
+                else if (mPageNum == 1) {
+                    mAdViewPager.setCurrentItem(2);
+                    mPageNum++;
+                }
+                else if (mPageNum == 2) {
+                    mAdViewPager.setCurrentItem(0);
+                    mPageNum = 0;
+                }
+            }
+        };
+        mThread = new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                while (true) {
+                    try {
+                        Thread.sleep(5000);
+                        mHandler.sendEmptyMessage(0);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        mThread.start();
     }
 }

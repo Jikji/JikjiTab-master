@@ -86,7 +86,6 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
         });
 
         mAdViewPager.setAdapter(mAdAdapter);
-
         /* 광고 뷰 페이저 자동 슬라이드 구현 */
         AdViewPagerAuto();
 
@@ -119,17 +118,14 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
         mHandler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
-                if (mPageNum == 0) {
+                if (mAdViewPager.getCurrentItem() == 0) {
                     mAdViewPager.setCurrentItem(1);
-                    mPageNum++;
                 }
-                else if (mPageNum == 1) {
+                else if (mAdViewPager.getCurrentItem() == 1) {
                     mAdViewPager.setCurrentItem(2);
-                    mPageNum++;
                 }
-                else if (mPageNum == 2) {
+                else if (mAdViewPager.getCurrentItem() == 2) {
                     mAdViewPager.setCurrentItem(0);
-                    mPageNum = 0;
                 }
             }
         };

@@ -458,9 +458,9 @@
         android:id="@+id/layout_tab_bottom"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/layout_home_product5"
         android:background="#fff"
         android:elevation="4dp"
+        android:layout_below="@id/layout_home_product5"
         android:orientation="horizontal">
 
         <ImageView

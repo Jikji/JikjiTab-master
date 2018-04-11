@@ -43,10 +43,11 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
         super.onCreateView(inflater, container, savedInstanceState);
         mRootView = inflater.inflate(R.layout.fr_main_page_one, container, false);
 
+        // 각종 변수 초기화
         initData();
+
         mAdViewPager = mRootView.findViewById(R.id.vp_fragment_page_one);
         mAdAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
-
             @Override
             public Fragment getItem(int position) {
                 if (mAdFragment != null && position < mAdFragment.length) {
@@ -66,32 +67,9 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
             }
         };
 
-        mAdViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        /* 광고 뷰 페이저 구현 */
-
-        PagerAdapter infinitePagerAdapter = new InfinitePagerAdapter(mAdAdapter);
-        mAdViewPager.setAdapter(infinitePagerAdapter);
-        mAdViewPager.setAutoScrollDurationFactor(3);
-        mAdViewPager.setSwipeScrollDurationFactor(3);
-        mAdViewPager.setInterval(3000);
-        mAdViewPager.setCycle(true);
-        mAdViewPager.startAutoScroll();
+        // 광고 뷰 페이저 스타트
+        settingAdViewPager();
 
         return mRootView;
     }
@@ -106,6 +84,18 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
             imageButton = mRootView.findViewById(id);
             imageButton.setOnClickListener(this);
         }
+    }
+
+    private void settingAdViewPager() {
+        /* 광고 뷰 페이저 구현 */
+
+        PagerAdapter infinitePagerAdapter = new InfinitePagerAdapter(mAdAdapter);
+        mAdViewPager.setAdapter(infinitePagerAdapter);
+        mAdViewPager.setAutoScrollDurationFactor(3);
+        mAdViewPager.setSwipeScrollDurationFactor(3);
+        mAdViewPager.setInterval(3000);
+        mAdViewPager.setCycle(true);
+        mAdViewPager.startAutoScroll();
     }
 
     @Override

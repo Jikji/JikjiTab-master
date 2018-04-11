@@ -1,7 +1,6 @@
 package com.flyco.tablayout;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -299,7 +298,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         ImageView iv_tab_image = (ImageView) tabView.findViewById(R.id.iv_tab_icon);
 
         // 폰트 적용
-        mTypeface = Typeface.createFromAsset(mContext.getAssets(), "Fonts/NanumSquareR.otf");
+        mTypeface = Typeface.createFromAsset(mContext.getAssets(), "NanumSquareR.otf");
         tv_tab_title.setTypeface(mTypeface);
 
         if (tv_tab_title != null) {

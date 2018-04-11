@@ -95,7 +95,7 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
          */
         mImageViewAniLoading = (ImageView) findViewById(R.id.iv_ani_loading);
         gifImage = new GlideDrawableImageViewTarget(mImageViewAniLoading);
-        Glide.with(this).load(R.drawable.ani_loading_logo).into(gifImage);
+        Glide.with(this).load(R.raw.ani_loading_logo).into(gifImage);
 
         mAnimationMoveYTextView = AnimationUtils.loadAnimation(this, R.anim.translate);
         mAnimationFadeoutGif = AnimationUtils.loadAnimation(this, R.anim.fadeout);

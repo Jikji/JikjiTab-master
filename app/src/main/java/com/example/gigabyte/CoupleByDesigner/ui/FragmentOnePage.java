@@ -2,9 +2,9 @@ package com.example.gigabyte.CoupleByDesigner.ui;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.gigabyte.CoupleByDesigner.Adapter.AutoScrollViewPager;
+import com.example.gigabyte.CoupleByDesigner.Adapter.InfinitePagerAdapter;
 import com.example.gigabyte.CoupleByDesigner.R;
 
 /**
@@ -19,10 +21,9 @@ import com.example.gigabyte.CoupleByDesigner.R;
  * 메인 액티비티의 첫번째 프래그먼트
  */
 
-// View.OnClickListener를 implements 해줬기 때문에 그 안에 있는 메소드를 구현해야 함. OnClick();
 public class FragmentOnePage extends Fragment implements View.OnClickListener {
 
-    private ViewPager mAdViewPager;
+    private AutoScrollViewPager mAdViewPager;
     private FragmentPagerAdapter mAdAdapter;
     private Fragment[] mAdFragment;
     private int[] mImageButtonID = {R.id.ib_home_best, R.id.ib_home_best1, R.id.ib_home_best2
@@ -31,9 +32,6 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
             , R.id.ib_home_md3};
     private ImageButton imageButton;
     private View mRootView;
-    private Thread mThread;
-    private Handler mHandler;
-    private int mPageNum = 0;
 
     public static FragmentOnePage getInstance() {
         FragmentOnePage mFragOnePage = new FragmentOnePage();
@@ -85,9 +83,15 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
             }
         });
 
-        mAdViewPager.setAdapter(mAdAdapter);
-        /* 광고 뷰 페이저 자동 슬라이드 구현 */
-        AdViewPagerAuto();
+        /* 광고 뷰 페이저 구현 */
+
+        PagerAdapter infinitePagerAdapter = new InfinitePagerAdapter(mAdAdapter);
+        mAdViewPager.setAdapter(infinitePagerAdapter);
+        mAdViewPager.setAutoScrollDurationFactor(3);
+        mAdViewPager.setSwipeScrollDurationFactor(3);
+        mAdViewPager.setInterval(3000);
+        mAdViewPager.setCycle(true);
+        mAdViewPager.startAutoScroll();
 
         return mRootView;
     }
@@ -111,38 +115,5 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener {
         } else if (v.getId() == R.id.ib_home_sale1) {
             Toast.makeText(getActivity(), "saleButton 구현", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    private void AdViewPagerAuto() {
-
-        mHandler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                if (mAdViewPager.getCurrentItem() == 0) {
-                    mAdViewPager.setCurrentItem(1);
-                }
-                else if (mAdViewPager.getCurrentItem() == 1) {
-                    mAdViewPager.setCurrentItem(2);
-                }
-                else if (mAdViewPager.getCurrentItem() == 2) {
-                    mAdViewPager.setCurrentItem(0);
-                }
-            }
-        };
-        mThread = new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                while (true) {
-                    try {
-                        Thread.sleep(5000);
-                        mHandler.sendEmptyMessage(0);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        };
-        mThread.start();
     }
 }

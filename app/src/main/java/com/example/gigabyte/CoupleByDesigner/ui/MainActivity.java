@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -58,8 +57,6 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
     // 메인 화면 프래그먼트 전환을 위한 페이저 어댑터 생성
     private MainPagerAdapter mAdapter;
-
-
     private ViewPager vp;
 
     @Override
@@ -77,7 +74,8 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
         // 액티비티에 붙어져 있는 뷰의 객체를 가져와서 decorView에 저장하는 듯하다.
         View decorView = getWindow().getDecorView();
-        /* ViewFindUtils의 find메소드로 decorView 객체와 뷰페이저의 id를 넘긴다.
+        /*
+        ViewFindUtils의 find메소드로 decorView 객체와 뷰페이저의 id를 넘긴다.
         참고로 ViewFindUtils에는 findViewId를 재정의하였음.
          */
         vp = ViewFindUtils.find(decorView, R.id.vp_main_page);
@@ -85,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         mAdapter = new MainPagerAdapter(getSupportFragmentManager());
         // 전환이 가능한 어댑터를 ViewPager객체의 vp에 달아준다.
         vp.setAdapter(mAdapter);
-
         /* decorView + R.id.mTabLayout을 전달해서 mTapLayout에 activity_main에서 id가 mTabLayout인
         레이아웃을 달아준다 */
         mTabLayout = ViewFindUtils.find(decorView, R.id.mTabLayout);
@@ -93,22 +90,16 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         mTabLayout.setViewPager(vp, mTitles, mTabEntities);
         // 시작 화면을 0페이지에 맞춘다,
         vp.setCurrentItem(0);
-
-
     }
 
     @Override
     public void onTabSelect(int position) {
         // 탭을 클릭했을 때 구현해줄 부분같음
-        Toast.makeText(mContext, "onTabSelect&position--->" + position, Toast.LENGTH_SHORT).show();
-
     }
 
     @Override
     public void onTabReselect(int position) {
         // 탭을 다시 클릭했을 때 구현해줄 부분같음
-        Toast.makeText(mContext, "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
-
     }
 
     private class MainPagerAdapter extends FragmentPagerAdapter {
@@ -150,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         }
 
         /* mFragments에 생성한 프래그먼트를 추가한다. */
-        mFragments.add(FragmentOnePage.getInstance());
+        mFragments.add(FragmentOnePage.getInstance(this));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[1]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[2]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[3]));

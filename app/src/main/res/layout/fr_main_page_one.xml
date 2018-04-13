@@ -8,11 +8,11 @@
         android:id="@+id/layout_vp_fragment_page_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         app:scale_base_height="546"
-        app:scale_base_width="1080"
-        android:layout_marginTop="5dp">
+        app:scale_base_width="1080">
 
-        <com.example.gigabyte.CoupleByDesigner.Adapter.AutoScrollViewPager
+        <com.daimajia.slider.library.SliderLayout
             android:id="@+id/vp_fragment_page_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,13 +21,24 @@
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
+    <com.example.gigabyte.CoupleByDesigner.Adapter.CircleAnimIndicator
+        android:id="@+id/layout_indicator_ad_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/layout_vp_fragment_page_one"
+        android:layout_marginTop="5dp"
+        android:background="#fff"
+        android:layout_centerInParent="true">
+
+    </com.example.gigabyte.CoupleByDesigner.Adapter.CircleAnimIndicator>
+
 
     <!--home best 이미지버튼-->
     <LinearLayout
         android:id="@+id/layout_home_best"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_below="@id/layout_vp_fragment_page_one"
+        android:layout_below="@id/layout_indicator_ad_viewpager"
         android:layout_marginTop="5dp"
         android:background="#fff"
         android:orientation="horizontal">
@@ -458,9 +469,9 @@
         android:id="@+id/layout_tab_bottom"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@id/layout_home_product5"
         android:background="#fff"
         android:elevation="4dp"
-        android:layout_below="@id/layout_home_product5"
         android:orientation="horizontal">
 
         <ImageView

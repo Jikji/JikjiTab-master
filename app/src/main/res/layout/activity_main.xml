@@ -93,7 +93,6 @@
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
-
     <ScrollView
         android:id="@+id/scrollView_main"
         android:layout_width="match_parent"

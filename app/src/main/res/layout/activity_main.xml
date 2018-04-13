@@ -28,13 +28,15 @@
                 android:layout_gravity="center"
                 android:background="@drawable/img_actionbar_logo_pink" />
 
-            <ImageView
-                android:id="@+id/iv_actiobar_searchbar"
+            <EditText
+                android:id="@+id/et_actiobar_searchbar"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="6"
                 android:layout_gravity="center"
-                android:background="@drawable/edittext_actionbar_search_pink" />
+                android:hint="커디 : 너와 나를 위한 아이템"
+                android:textSize="12sp"
+                android:background="@drawable/edittext_actionbar_search_pink"/>
 
             <ImageView
                 android:id="@+id/iv_actionbar_dipslist"

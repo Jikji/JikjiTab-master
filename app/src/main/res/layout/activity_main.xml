@@ -34,8 +34,13 @@
                 android:layout_height="match_parent"
                 android:layout_weight="6"
                 android:layout_gravity="center"
+                android:paddingStart="55dp"
+                android:paddingEnd="30dp"
                 android:hint="커디 : 너와 나를 위한 아이템"
                 android:textSize="12sp"
+                android:inputType="text"
+                android:focusable="false"
+                android:clickable="false"
                 android:background="@drawable/edittext_actionbar_search_pink"/>
 
             <ImageView

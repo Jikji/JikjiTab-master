@@ -40,7 +40,6 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
     private Animation mAnimationMoveYTextView;
     private Animation mAnimationFadeInWidget;
     private Animation mAnimationFadeInBtnTheme;
-
     public static int mSetTheme = 0;
 
     @Override

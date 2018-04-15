@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!--광고 뷰 페이저-->
+    <!--광고 이미지 슬라이더-->
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:id="@+id/layout_vp_fragment_page_one"
         android:layout_width="match_parent"
@@ -21,24 +21,12 @@
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
-    <com.example.gigabyte.CoupleByDesigner.Adapter.CircleAnimIndicator
-        android:id="@+id/layout_indicator_ad_viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_below="@id/layout_vp_fragment_page_one"
-        android:layout_marginTop="5dp"
-        android:background="#fff"
-        android:layout_centerInParent="true">
-
-    </com.example.gigabyte.CoupleByDesigner.Adapter.CircleAnimIndicator>
-
-
     <!--home best 이미지버튼-->
     <LinearLayout
         android:id="@+id/layout_home_best"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_below="@id/layout_indicator_ad_viewpager"
+        android:layout_below="@id/layout_vp_fragment_page_one"
         android:layout_marginTop="5dp"
         android:background="#fff"
         android:orientation="horizontal">

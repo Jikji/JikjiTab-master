@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -19,9 +18,15 @@ import com.example.gigabyte.CoupleByDesigner.utils.ViewFindUtils;
 
 import java.util.ArrayList;
 
+/**
+ * 메인 화면
+ */
+
 public class MainActivity extends AppCompatActivity implements OnTabSelectListener {
 
-    /** 변수 선언*/
+    /**
+     * 변수 선언
+     */
 
     // 현재 컨텍스트를 자기 자신으로 선언
     private Context mContext = this;
@@ -29,10 +34,10 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     // 커스텀 탭 인터페이스 ArrayList 생성
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-    // SlidingTabLayout 객체 생성
+    // SlidingTabLayout (라이브러리) 객체 생성
     private SlidingTabLayout mTabLayout;
 
-    // 탭 타이틀 배열
+    // 탭 제목 배열
     private final String[] mTitles = {
             "홈", "이벤트 & 기획", "Couple 놀이터"
             , "유저 게시판", "제휴 문의"
@@ -40,38 +45,44 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
     // 탭이 선택되지 않았을 때 보여줄 아이콘
     private int[] mIconUnselectIds = {
-            R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
-            R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect,
-            R.mipmap.tab_home_unselect };
+            R.mipmap.btn_tab_home_unselect, R.mipmap.btn_tab_event_unselect,
+            R.mipmap.btn_tab_playground_unselect, R.mipmap.btn_tab_bulletin_unselect,
+            R.mipmap.btn_tab_cooperation_unselect};
 
     // 탭이 선택되었을 때 보여줄 아이콘
-    private int[] mIconSelectIds = {
-            R.mipmap.tab_home_select, R.mipmap.tab_speech_select,
-            R.mipmap.tab_contact_select, R.mipmap.tab_more_select,
-            R.mipmap.tab_home_select };
+    private int[] mIconSelectIdsPink = {
+            R.mipmap.btn_tab_home_select_pink, R.mipmap.btn_tab_event_select_pink,
+            R.mipmap.btn_tab_playground_select_pink, R.mipmap.btn_tab_bulletin_select_pink,
+            R.mipmap.btn_tab_cooperation_select_pink};
 
     // 메인 화면 프래그먼트 전환을 위한 페이저 어댑터 생성
     private MainPagerAdapter mAdapter;
+    private ViewPager vp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (LoadingActivity.mSetTheme == 0) {
+            setTheme(R.style.AppTheme);
+        } else if (LoadingActivity.mSetTheme == 1) {
+            setTheme(R.style.AppTheme_Blue);
+        }
         setContentView(R.layout.activity_main);
 
+        // 각종 데이터 초기화 (탭, 프래그먼트를 초기화함)
         initData();
-
 
         // 액티비티에 붙어져 있는 뷰의 객체를 가져와서 decorView에 저장하는 듯하다.
         View decorView = getWindow().getDecorView();
-        /* ViewFindUtils의 find메소드로 decorView 객체와 뷰페이저의 id를 넘긴다.
+        /*
+        ViewFindUtils의 find메소드로 decorView 객체와 뷰페이저의 id를 넘긴다.
         참고로 ViewFindUtils에는 findViewId를 재정의하였음.
          */
-        ViewPager vp = ViewFindUtils.find(decorView, R.id.vp_main_page);
-        // mAdapter에 프래그먼트 전환이 가능하도록 세팅하는 듯
+        vp = ViewFindUtils.find(decorView, R.id.vp_main_page);
+        // mAdapter에 프래그먼트 전환이 가능하도록 매니저를 달아준다.
         mAdapter = new MainPagerAdapter(getSupportFragmentManager());
         // 전환이 가능한 어댑터를 ViewPager객체의 vp에 달아준다.
         vp.setAdapter(mAdapter);
-
         /* decorView + R.id.mTabLayout을 전달해서 mTapLayout에 activity_main에서 id가 mTabLayout인
         레이아웃을 달아준다 */
         mTabLayout = ViewFindUtils.find(decorView, R.id.mTabLayout);
@@ -84,15 +95,11 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     @Override
     public void onTabSelect(int position) {
         // 탭을 클릭했을 때 구현해줄 부분같음
-        Toast.makeText(mContext, "onTabSelect&position--->" + position, Toast.LENGTH_SHORT).show();
-
     }
 
     @Override
     public void onTabReselect(int position) {
         // 탭을 다시 클릭했을 때 구현해줄 부분같음
-        Toast.makeText(mContext, "onTabReselect&position--->" + position, Toast.LENGTH_SHORT).show();
-
     }
 
     private class MainPagerAdapter extends FragmentPagerAdapter {
@@ -105,6 +112,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         // 슬라이드 시킬 프래그먼트 갯수
         @Override
         public int getCount() {
+            //  mFragments가 ArrayList<> 형식이기 때문에 들어간 아이템 수 만큼 반환
             return mFragments.size();
         }
 
@@ -129,13 +137,11 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
             생성자에 매개변수로 mTitles[i], mIconSelectId[i], mIconUnselected[i]를 전달한다.
             그러면 각 TabEntity 객체에 전달받아 TabEntity안에 있는 변수에 저장한다.
              */
-            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
+            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIdsPink[i], mIconUnselectIds[i]));
         }
 
-        /* SimpleCardFragment의 getInstance메소드에 mTitles[idx]의 문자열을 전달함
-            그러면 SimpleCardFragment는 mTitles[i]의 문자열을 받아서 각 프래그먼트에
-            뿌려준다. 반환값은 SimpleCardFragment임. */
-        mFragments.add(FragmentOnePage.getInstance());
+        /* mFragments에 생성한 프래그먼트를 추가한다. */
+        mFragments.add(FragmentOnePage.getInstance(this));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[1]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[2]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[3]));

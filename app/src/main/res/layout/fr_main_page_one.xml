@@ -1,18 +1,520 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_fragment_page_one"
+    <LinearLayout
+        android:id="@+id/layout_tab_bottom"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tv_fragment_page_one"
+        <ImageView
+            android:id="@+id/iv_tab_main_bottom_home"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="9dp"
+            android:layout_weight="1"
+            android:src="@mipmap/btn_bottom_home_select" />
+
+        <ImageView
+            android:id="@+id/iv_tab_main_bottom_couple"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="9dp"
+            android:layout_weight="1"
+            android:src="@mipmap/btn_bottom_couple_unselect" />
+
+        <ImageView
+            android:id="@+id/iv_tab_main_bottom_day"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="9dp"
+            android:layout_weight="1"
+            android:src="@mipmap/btn_bottom_day_unselect" />
+
+        <ImageView
+            android:id="@+id/iv_tab_main_bottom_some"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="9dp"
+            android:layout_weight="1"
+            android:src="@mipmap/btn_bottom_some_unselect" />
+
+        <ImageView
+            android:id="@+id/iv_tab_main_bottom_all"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="9dp"
+            android:layout_weight="1"
+            android:src="@mipmap/btn_bottom_all_unselect" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:layout_below="@+id/vp_fragment_page_one"/>
+        android:layout_above="@id/layout_tab_bottom"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_vp_fragment_page_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:scale_base_height="546"
+                app:scale_base_width="1080">
+
+                <com.daimajia.slider.library.SliderLayout
+                    android:id="@+id/vp_fragment_page_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:scale_height="546"
+                    app:scale_width="1080" />
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home best 이미지버튼-->
+            <LinearLayout
+                android:id="@+id/layout_home_best"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@id/layout_vp_fragment_page_one"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ib_home_best"
+                    android:layout_width="108.33dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/btn_home_best" />
+            </LinearLayout>
+
+            <!--home best 목록 이미지 버튼-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_best_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_home_best"
+                android:background="#fff"
+                app:scale_base_height="405"
+                app:scale_base_width="1080">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:scale_height="405"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_best1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5.25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_best2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="5.25dp"
+                        android:layout_marginStart="5.25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_best3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="5.25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook" />
+
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home sale 이미지 버튼-->
+            <LinearLayout
+                android:id="@+id/layout_home_sale"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@id/layout_home_best_group"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ib_home_sale"
+                    android:layout_width="135.33dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/btn_home_sale" />
+            </LinearLayout>
+
+            <!--home sale 목록 이미지 버튼 -->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_sale_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_home_sale"
+                android:background="#fff"
+                app:scale_base_height="405"
+                app:scale_base_width="1080">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:scale_height="405"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_sale1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5.25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_sale2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="5.25dp"
+                        android:layout_marginStart="5.25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_sale3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="5.25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook" />
+
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home md 이미지 버튼-->
+            <LinearLayout
+                android:id="@+id/layout_home_md"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@id/layout_home_sale_group"
+                android:layout_marginTop="5dp"
+                android:background="#fff"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ib_home_md"
+                    android:layout_width="124.66dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/btn_home_md" />
+            </LinearLayout>
+
+            <!--home md 목록 이미지 버튼-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_md_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_home_md"
+                android:background="#fff"
+                app:scale_base_height="405"
+                app:scale_base_width="1080">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:scale_height="405"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_md1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5.25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_md2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="5.25dp"
+                        android:layout_marginStart="5.25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_md3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="5.25dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook" />
+
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_md_group"
+                android:layout_marginTop="5dp"
+                app:scale_base_height="624"
+                app:scale_base_width="1080">
+
+                <!--home product 첫번째 줄-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="624"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+
+            <!--home product 두번째 줄-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_product1"
+                android:layout_marginTop="5dp"
+                app:scale_base_height="624"
+                app:scale_base_width="1080">
+
+                <!--home product 첫번째 줄-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="624"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home product 세번째 줄-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_product2"
+                android:layout_marginTop="5dp"
+                app:scale_base_height="624"
+                app:scale_base_width="1080">
+
+                <!--home product 첫번째 줄-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="624"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home product 네번째 줄-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_product3"
+                android:layout_marginTop="5dp"
+                app:scale_base_height="624"
+                app:scale_base_width="1080">
+
+                <!--home product 첫번째 줄-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="624"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home product 다섯번쩨 줄-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_product4"
+                android:layout_marginTop="5dp"
+                app:scale_base_height="624"
+                app:scale_base_width="1080">
+
+                <!--home product 첫번째 줄-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="624"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

@@ -298,7 +298,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         ImageView iv_tab_image = (ImageView) tabView.findViewById(R.id.iv_tab_icon);
 
         // 폰트 적용
-        mTypeface = Typeface.createFromAsset(mContext.getAssets(), "NanumSquareR.otf");
+        mTypeface = Typeface.createFromAsset(mContext.getAssets(), "NanumSquareB.otf");
         tv_tab_title.setTypeface(mTypeface);
 
         if (tv_tab_title != null) {

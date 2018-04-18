@@ -34,10 +34,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="6"
                 android:layout_gravity="center"
-                android:paddingStart="55dp"
+                android:paddingStart="52dp"
                 android:paddingEnd="30dp"
-                android:hint="example"
-                android:textSize="12sp"
+                android:hint="커디 : 너와 나를 위한 아이템"
+                android:textSize="11dp"
+                android:fontFamily="@font/nanumsquare_r"
                 android:inputType="text"
                 android:focusable="false"
                 android:clickable="false"
@@ -67,24 +68,23 @@
         android:id="@+id/layout_main_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#fff"
         android:elevation="4dp"
-        android:layout_marginTop="1dp"
         tl:scale_base_width="1080"
         tl:scale_base_height="120">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#fff"
             tl:scale_width="1080"
             tl:scale_height="120"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#fff">
 
             <com.flyco.tablayout.SlidingTabLayout
                 android:id="@+id/mTabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#fff"
                 tl:tl_iconHeight="18dp"
                 tl:tl_iconLeftMargin="13dp"
                 tl:tl_iconMargin="-10dp"
@@ -94,7 +94,7 @@
                 tl:tl_indicator_width="15dp"
                 tl:tl_indicator_height="7dp"
                 tl:tl_underline_height="2dp"
-                tl:tl_underline_color="#B4B4B4"/>
+                tl:tl_underline_color="#fff"/>
 
         </LinearLayout>
 
@@ -157,7 +157,8 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/vp_main_page"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_above="@id/layout_tab_bottom"/>
     </RelativeLayout>
 
 

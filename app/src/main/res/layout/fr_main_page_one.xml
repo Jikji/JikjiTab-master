@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <com.ssomai.android.scalablelayout.ScalableLayout
-                android:id="@+id/layout_vp_fragment_page_one"
+                android:id="@+id/layout_vp_fragment_ad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -26,7 +26,7 @@
                 app:scale_base_width="1080">
 
                 <com.daimajia.slider.library.SliderLayout
-                    android:id="@+id/vp_fragment_page_one"
+                    android:id="@+id/sliderlayout_ad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:scale_height="546"
@@ -39,17 +39,17 @@
                 android:id="@+id/layout_home_best"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:layout_below="@id/layout_vp_fragment_page_one"
+                android:layout_below="@id/layout_vp_fragment_ad"
                 android:layout_marginTop="5dp"
                 android:background="#fff"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/ib_home_best"
-                    android:layout_width="108.33dp"
-                    android:layout_height="19dp"
+                    android:layout_width="110dp"
+                    android:layout_height="20dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/btn_home_best" />
             </LinearLayout>
 
@@ -113,8 +113,8 @@
 
                 <ImageButton
                     android:id="@+id/ib_home_sale"
-                    android:layout_width="135.33dp"
-                    android:layout_height="19dp"
+                    android:layout_width="136dp"
+                    android:layout_height="20dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/btn_home_sale" />
@@ -180,8 +180,8 @@
 
                 <ImageButton
                     android:id="@+id/ib_home_md"
-                    android:layout_width="124.66dp"
-                    android:layout_height="19dp"
+                    android:layout_width="125dp"
+                    android:layout_height="20dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/btn_home_md" />

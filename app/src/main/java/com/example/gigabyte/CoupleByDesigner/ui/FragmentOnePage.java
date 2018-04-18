@@ -1,8 +1,11 @@
 package com.example.gigabyte.CoupleByDesigner.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,14 +30,10 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener
         , ViewPagerEx.OnPageChangeListener, BaseSliderView.OnSliderClickListener {
 
     private SliderLayout mSliderLayout;
-    private int[] mImageButtonID = {R.id.ib_home_best, R.id.ib_home_best1, R.id.ib_home_best2
-            , R.id.ib_home_best3, R.id.ib_home_sale, R.id.ib_home_sale1, R.id.ib_home_sale2
-            , R.id.ib_home_sale3, R.id.ib_home_md, R.id.ib_home_md1, R.id.ib_home_md2
-            , R.id.ib_home_md3};
+    private int[] mImageButtonID = { R.id.ib_home_best, R.id.ib_home_sale, R.id.ib_home_md };
     private ImageButton imageButton;
     private View mRootView;
     private static Context mContext;
-//    private CircleAnimIndicator mCircleIndicator;
 
     public static FragmentOnePage getInstance(Context context) {
         mContext = context;
@@ -62,9 +61,10 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener
             imageButton.setOnClickListener(this);
         }
 
-        mSliderLayout = mRootView.findViewById(R.id.vp_fragment_page_one);
+        mSliderLayout = mRootView.findViewById(R.id.sliderlayout_ad);
     }
 
+    // 광고 이미지 슬라이더 메소드
     private void settingSliderLayout() {
 
         HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
@@ -97,10 +97,18 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.ib_home_best1 || v.getId() == R.id.ib_home_best2 || v.getId() == R.id.ib_home_best3) {
-            Toast.makeText(getActivity(), "bestButton 구현", Toast.LENGTH_SHORT).show();
-        } else if (v.getId() == R.id.ib_home_sale1) {
-            Toast.makeText(getActivity(), "saleButton 구현", Toast.LENGTH_SHORT).show();
+        if(v.getId() == R.id.ib_home_best) {
+            Intent intent = new Intent(getActivity(), BestGroupActivity.class);
+            startActivity(intent);
+            Toast.makeText(getActivity(), "HomeButton 클릭", Toast.LENGTH_SHORT).show();
+        } else if (v.getId() == R.id.ib_home_sale) {
+            Intent intent = new Intent(getActivity(), SaleGroupActivity.class);
+            startActivity(intent);
+            Toast.makeText(getActivity(), "SaleButton 클릭", Toast.LENGTH_SHORT).show();
+        } else if (v.getId() == R.id.ib_home_md) {
+            Intent intent = new Intent(getActivity(), MdGroupActivity.class);
+            startActivity(intent);
+            Toast.makeText(getActivity(), "MdButton 클릭", Toast.LENGTH_SHORT).show();
         }
     }
 

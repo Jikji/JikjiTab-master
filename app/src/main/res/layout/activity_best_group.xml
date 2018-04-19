@@ -1,17 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.BestGroupActivity">
-    
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Best 모아보기 액티비티"
-        android:textSize="20dp"
-        android:fontFamily="@font/nanumsquare_eb"
-        android:layout_centerInParent="true"/>
+    android:orientation="vertical">
 
-</RelativeLayout>
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:id="@+id/layout_nest_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        tl:scale_base_width="1080"
+        tl:scale_base_height="135">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            tl:scale_width="1080"
+            tl:scale_height="135">
+
+            <ImageView
+                android:id="@+id/iv_best_group_actionbar_logo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:background="@drawable/img_actionbar_logo_pink" />
+
+            <EditText
+                android:id="@+id/et_best_group_actiobar_searchbar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:layout_gravity="center"
+                android:paddingStart="52dp"
+                android:paddingEnd="30dp"
+                android:hint="커디 : 너와 나를 위한 아이템"
+                android:textSize="11dp"
+                android:fontFamily="@font/nanumsquare_r"
+                android:inputType="text"
+                android:focusable="false"
+                android:clickable="false"
+                android:background="@drawable/edittext_actionbar_search_pink"/>
+
+            <ImageView
+                android:id="@+id/iv_best_group_actionbar_dipslist"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_actionbar_dipslist_pink" />
+
+            <ImageView
+                android:id="@+id/iv_best_group_actionbar_myinfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_actionbar_myinfo_pink" />
+
+        </LinearLayout>
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:id="@+id/layout_best_group_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:elevation="4dp"
+        tl:scale_base_width="1080"
+        tl:scale_base_height="120">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tl:scale_width="1080"
+            tl:scale_height="120"
+            android:orientation="vertical"
+            android:background="#fff">
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tablayout_best_group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tl:tl_iconHeight="18dp"
+                tl:tl_iconLeftMargin="13dp"
+                tl:tl_iconMargin="-10dp"
+                tl:tl_iconWidth="18dp"
+                tl:tl_indicator_color="#FA5858"
+                tl:tl_indicator_style="TRIANGLE"
+                tl:tl_indicator_width="15dp"
+                tl:tl_indicator_height="7dp"
+                tl:tl_underline_height="2dp"
+                tl:tl_underline_color="#fff"/>
+
+        </LinearLayout>
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+</LinearLayout>

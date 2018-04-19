@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:background="#fff"
             tl:scale_width="1080"
             tl:scale_height="135">
@@ -34,7 +34,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="6"
                 android:layout_gravity="center"
-                android:paddingStart="52dp"
+                android:paddingStart="55dp"
                 android:paddingEnd="30dp"
                 android:hint="커디 : 너와 나를 위한 아이템"
                 android:textSize="11dp"

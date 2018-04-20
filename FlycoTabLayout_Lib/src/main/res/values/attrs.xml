@@ -82,6 +82,7 @@
     <attr name="tl_iconHeight" format="dimension"/>
     <!-- 设置icon是否可见 -->
     <attr name="tl_iconMargin" format="dimension"/>
+    <attr name="tl_iconLeftMargin" format="dimension"/>
 
     <declare-styleable name="SlidingTabLayout">
         <!-- indicator -->
@@ -124,9 +125,9 @@
         <attr name="tl_iconHeight"/>
         <!-- 设置icon是否可见 -->
         <attr name="tl_iconMargin"/>
+        <attr name="tl_iconLeftMargin"/>
 
     </declare-styleable>
-
     <declare-styleable name="CommonTabLayout">
         <!-- indicator -->
         <attr name="tl_indicator_color"/>

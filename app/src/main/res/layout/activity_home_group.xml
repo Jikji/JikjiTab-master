@@ -10,54 +10,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="4dp"
-        tl:scale_base_width="1080"
-        tl:scale_base_height="135">
+        tl:scale_base_height="135"
+        tl:scale_base_width="1080">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fff"
-            tl:scale_width="1080"
-            tl:scale_height="135">
+            tl:scale_height="135"
+            tl:scale_width="1080">
 
             <ImageView
                 android:id="@+id/iv_best_group_actionbar_logo"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:layout_gravity="center"
+                android:layout_weight="2"
                 android:background="@drawable/img_actionbar_logo_pink" />
 
             <EditText
                 android:id="@+id/et_best_group_actiobar_searchbar"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="6"
                 android:layout_gravity="center"
-                android:paddingStart="52dp"
-                android:paddingEnd="30dp"
-                android:hint="커디 : 너와 나를 위한 아이템"
-                android:textSize="11dp"
-                android:fontFamily="@font/nanumsquare_r"
-                android:inputType="text"
-                android:focusable="false"
+                android:layout_weight="6"
+                android:background="@drawable/edittext_actionbar_search_pink"
                 android:clickable="false"
-                android:background="@drawable/edittext_actionbar_search_pink"/>
+                android:focusable="false"
+                android:fontFamily="@font/nanumsquare_r"
+                android:hint="커디 : 너와 나를 위한 아이템"
+                android:inputType="text"
+                android:paddingEnd="30dp"
+                android:paddingStart="55dp"
+                android:textSize="11dp" />
 
             <ImageView
                 android:id="@+id/iv_best_group_actionbar_dipslist"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="@drawable/btn_actionbar_dipslist_pink" />
 
             <ImageView
                 android:id="@+id/iv_best_group_actionbar_myinfo"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_gravity="center"
+                android:layout_weight="1"
                 android:background="@drawable/btn_actionbar_myinfo_pink" />
 
         </LinearLayout>
@@ -65,38 +65,44 @@
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
     <com.ssomai.android.scalablelayout.ScalableLayout
-        android:id="@+id/layout_best_group_tab"
+        android:id="@+id/layout_group_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#fff"
         android:elevation="4dp"
-        tl:scale_base_width="1080"
-        tl:scale_base_height="120">
+        tl:scale_base_height="120"
+        tl:scale_base_width="1080">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tl:scale_width="1080"
-            tl:scale_height="120"
+            android:background="#fff"
             android:orientation="vertical"
-            android:background="#fff">
+            tl:scale_height="120"
+            tl:scale_width="1080">
 
-            <com.flyco.tablayout.SlidingTabLayout
-                android:id="@+id/tablayout_best_group"
+            <com.flyco.tablayout.CommonTabLayout
+                android:id="@+id/tablayout_group"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                tl:tl_iconGravity="LEFT"
                 tl:tl_iconHeight="18dp"
-                tl:tl_iconLeftMargin="13dp"
-                tl:tl_iconMargin="-10dp"
                 tl:tl_iconWidth="18dp"
+                tl:tl_iconMargin="10dp"
                 tl:tl_indicator_color="#FA5858"
+                tl:tl_indicator_height="7dp"
                 tl:tl_indicator_style="TRIANGLE"
                 tl:tl_indicator_width="15dp"
-                tl:tl_indicator_height="7dp"
-                tl:tl_underline_height="2dp"
-                tl:tl_underline_color="#fff"/>
+                tl:tl_textsize="14dp"
+                tl:tl_underline_color="#fff"
+                tl:tl_underline_height="2dp" />
 
         </LinearLayout>
-
     </com.ssomai.android.scalablelayout.ScalableLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_home_group_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>

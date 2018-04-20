@@ -45,19 +45,19 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
     // 탭이 선택되지 않았을 때 보여줄 아이콘
     private int[] mIconUnselectIds = {
-            R.mipmap.btn_tab_home_unselect, R.mipmap.btn_tab_event_unselect,
-            R.mipmap.btn_tab_playground_unselect, R.mipmap.btn_tab_bulletin_unselect,
-            R.mipmap.btn_tab_cooperation_unselect};
+            R.mipmap.tab_home_unselect, R.mipmap.tab_event_unselect,
+            R.mipmap.tab_playground_unselect, R.mipmap.tab_bulletin_unselect,
+            R.mipmap.tab_cooperation_unselect};
 
     // 탭이 선택되었을 때 보여줄 아이콘
     private int[] mIconSelectIdsPink = {
-            R.mipmap.btn_tab_home_select_pink, R.mipmap.btn_tab_event_select_pink,
-            R.mipmap.btn_tab_playground_select_pink, R.mipmap.btn_tab_bulletin_select_pink,
-            R.mipmap.btn_tab_cooperation_select_pink};
+            R.mipmap.tab_home_select_pink, R.mipmap.tab_event_select_pink,
+            R.mipmap.tab_playground_select_pink, R.mipmap.tab_bulletin_select_pink,
+            R.mipmap.tab_cooperation_select_pink};
 
     // 메인 화면 프래그먼트 전환을 위한 페이저 어댑터 생성
     private MainPagerAdapter mAdapter;
-    private ViewPager vp;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,18 +78,18 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         ViewFindUtils의 find메소드로 decorView 객체와 뷰페이저의 id를 넘긴다.
         참고로 ViewFindUtils에는 findViewId를 재정의하였음.
          */
-        vp = ViewFindUtils.find(decorView, R.id.vp_main_page);
+        mViewPager = ViewFindUtils.find(decorView, R.id.vp_main_page);
         // mAdapter에 프래그먼트 전환이 가능하도록 매니저를 달아준다.
         mAdapter = new MainPagerAdapter(getSupportFragmentManager());
         // 전환이 가능한 어댑터를 ViewPager객체의 vp에 달아준다.
-        vp.setAdapter(mAdapter);
+        mViewPager.setAdapter(mAdapter);
         /* decorView + R.id.mTabLayout을 전달해서 mTapLayout에 activity_main에서 id가 mTabLayout인
         레이아웃을 달아준다 */
         mTabLayout = ViewFindUtils.find(decorView, R.id.mTabLayout);
         // tab이랑 뷰페이저를 연동한다. mtitles 리스트랑 mTabEntities 리스트를 넘겨줌.
-        mTabLayout.setViewPager(vp, mTitles, mTabEntities);
+        mTabLayout.setViewPager(mViewPager, mTitles, mTabEntities);
         // 시작 화면을 0페이지에 맞춘다,
-        vp.setCurrentItem(0);
+        mViewPager.setCurrentItem(0);
     }
 
     @Override

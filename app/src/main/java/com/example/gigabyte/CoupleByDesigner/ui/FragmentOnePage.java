@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,15 +96,15 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.ib_home_best) {
-            Intent intent = new Intent(getActivity(), BestGroupActivity.class);
+            Intent intent = new Intent(getActivity(), HomeGroupActivity.class);
             startActivity(intent);
             Toast.makeText(getActivity(), "HomeButton 클릭", Toast.LENGTH_SHORT).show();
         } else if (v.getId() == R.id.ib_home_sale) {
-            Intent intent = new Intent(getActivity(), SaleGroupActivity.class);
+            Intent intent = new Intent(getActivity(), HomeGroupActivity.class);
             startActivity(intent);
             Toast.makeText(getActivity(), "SaleButton 클릭", Toast.LENGTH_SHORT).show();
         } else if (v.getId() == R.id.ib_home_md) {
-            Intent intent = new Intent(getActivity(), MdGroupActivity.class);
+            Intent intent = new Intent(getActivity(), HomeGroupActivity.class);
             startActivity(intent);
             Toast.makeText(getActivity(), "MdButton 클릭", Toast.LENGTH_SHORT).show();
         }

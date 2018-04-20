@@ -17,9 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.LoadingActivity" />
-        <activity android:name=".ui.BestGroupActivity" />
-        <activity android:name=".ui.SaleGroupActivity" />
-        <activity android:name=".ui.MdGroupActivity"></activity>
+        <activity android:name=".ui.HomeGroupActivity" />
     </application>
 
 </manifest>

@@ -27,6 +27,4 @@ public class TabEntity implements CustomTabEntity {
     public int getTabUnselectedIcon() {
         return unSelectedIcon;
     }
-
-
 }

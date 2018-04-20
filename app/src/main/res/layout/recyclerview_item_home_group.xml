@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:id="@+id/scalablelayout_home_group_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:scale_base_height="624"
+        app:scale_base_width="1080">
+
+        <!--home product 첫번째 줄-->
+        <LinearLayout
+            android:id="@+id/layout_home_group_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="horizontal"
+            app:scale_height="624"
+            app:scale_width="1080">
+
+            <ImageView
+                android:id="@+id/iv_home_group_product1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_home_product" />
+
+            <ImageView
+                android:id="@+id/iv_home_group_product2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_home_product" />
+        </LinearLayout>
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+</LinearLayout>

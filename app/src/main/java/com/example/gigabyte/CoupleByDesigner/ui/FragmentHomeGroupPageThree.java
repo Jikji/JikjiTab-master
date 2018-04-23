@@ -16,7 +16,7 @@ import com.example.gigabyte.CoupleByDesigner.R;
 
 import java.util.ArrayList;
 
-public class FragmentHomeGroupPageOne extends Fragment {
+public class FragmentHomeGroupPageThree extends Fragment {
 
     private static Context mContext;
     private static View mRootView;
@@ -25,16 +25,16 @@ public class FragmentHomeGroupPageOne extends Fragment {
     LinearLayoutManager mLinearLayoutManager;
     ArrayList<RecyclerViewHomeItem> mItems = new ArrayList<>();
 
-    public static FragmentHomeGroupPageOne getInstance(Context context) {
+    public static FragmentHomeGroupPageThree getInstance(Context context) {
         mContext = context;
-        FragmentHomeGroupPageOne mFragmentHomeGroupPageOne = new FragmentHomeGroupPageOne();
-        return mFragmentHomeGroupPageOne;
+        FragmentHomeGroupPageThree mFragmentHomeGroupPageThree = new FragmentHomeGroupPageThree();
+        return mFragmentHomeGroupPageThree;
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fr_home_group_page_one, container, false);
+        mRootView = inflater.inflate(R.layout.fr_home_group_page_three, container, false);
 
         settingRecyclerView();
         initData();
@@ -43,7 +43,7 @@ public class FragmentHomeGroupPageOne extends Fragment {
     }
 
     private void settingRecyclerView() {
-        mRecyclerView = (RecyclerView) mRootView.findViewById(R.id.recyclerview_home_group_best);
+        mRecyclerView = (RecyclerView) mRootView.findViewById(R.id.recyclerview_home_group_md);
         mLinearLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
         mRecyclerViewAdapter = new RecyclerViewHomeAdapter(mItems);

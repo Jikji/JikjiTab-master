@@ -29,6 +29,7 @@ public class HomeGroupActivity extends AppCompatActivity {
             R.mipmap.tab_grouplook_best_select_pink, R.mipmap.tab_grouplook_sale_select_pink,
             R.mipmap.tab_grouplook_md_select_pink};
     private HomeGroupPagerAdapter mAdapter;
+    public static int mPositionStartTab = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,8 +92,8 @@ public class HomeGroupActivity extends AppCompatActivity {
 
     private void initData() {
         mFragments.add(FragmentHomeGroupPageOne.getInstance(this));
-        mFragments.add(SimpleCardFragment.getInstance("Switch ViewPager " + mTitles[1]));
-        mFragments.add(SimpleCardFragment.getInstance("Switch ViewPager " + mTitles[2]));
+        mFragments.add(FragmentHomeGroupPageTwo.getInstance(this));
+        mFragments.add(FragmentHomeGroupPageThree.getInstance(this));
 
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
@@ -106,6 +107,7 @@ public class HomeGroupActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.vp_home_group_page);
         mAdapter = new HomeGroupPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
-        mViewPager.setCurrentItem(0);
+        mCommonTabLayout.setCurrentTab(mPositionStartTab);
+        mViewPager.setCurrentItem(mPositionStartTab);
     }
 }

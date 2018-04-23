@@ -96,14 +96,17 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.ib_home_best) {
+            HomeGroupActivity.mPositionStartTab = 0;
             Intent intent = new Intent(getActivity(), HomeGroupActivity.class);
             startActivity(intent);
             Toast.makeText(getActivity(), "HomeButton 클릭", Toast.LENGTH_SHORT).show();
         } else if (v.getId() == R.id.ib_home_sale) {
+            HomeGroupActivity.mPositionStartTab = 1;
             Intent intent = new Intent(getActivity(), HomeGroupActivity.class);
             startActivity(intent);
             Toast.makeText(getActivity(), "SaleButton 클릭", Toast.LENGTH_SHORT).show();
         } else if (v.getId() == R.id.ib_home_md) {
+            HomeGroupActivity.mPositionStartTab = 2;
             Intent intent = new Intent(getActivity(), HomeGroupActivity.class);
             startActivity(intent);
             Toast.makeText(getActivity(), "MdButton 클릭", Toast.LENGTH_SHORT).show();

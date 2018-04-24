@@ -32,8 +32,7 @@
                 android:layout_marginEnd="3dp"
                 android:layout_marginStart="6dp"
                 android:layout_marginTop="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_home_product" />
+                android:layout_weight="1"/>
 
             <ImageView
                 android:id="@+id/iv_home_group_product2"
@@ -44,8 +43,7 @@
                 android:layout_marginEnd="6dp"
                 android:layout_marginStart="3dp"
                 android:layout_marginTop="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_home_product" />
+                android:layout_weight="1"/>
         </LinearLayout>
 
     </com.ssomai.android.scalablelayout.ScalableLayout>

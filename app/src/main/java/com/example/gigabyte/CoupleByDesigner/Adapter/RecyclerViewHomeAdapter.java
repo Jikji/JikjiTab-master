@@ -1,5 +1,7 @@
 package com.example.gigabyte.CoupleByDesigner.Adapter;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +13,17 @@ import com.example.gigabyte.CoupleByDesigner.Item.RecyclerViewHomeItem;
 import com.example.gigabyte.CoupleByDesigner.R;
 import com.ssomai.android.scalablelayout.ScalableLayout;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHomeAdapter.ItemViewHolder> {
 
     ArrayList<RecyclerViewHomeItem> mItems = new ArrayList<>();
+    private Bitmap mBitmap;
 
     public RecyclerViewHomeAdapter(ArrayList<RecyclerViewHomeItem> mItems) {
         this.mItems = mItems;
@@ -30,8 +38,9 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-//        holder.mImageView1.setImageResource(mItems.get(position).getImageView1Id());
-//        holder.mImageView2.setImageResource(mItems.get(position).getImageView2Id());
+        holder.mImageView1.setImageResource(R.drawable.btn_home_grouplook);
+        holder.mImageView2.setImageResource(R.drawable.btn_home_grouplook);
+
     }
 
     @Override
@@ -49,8 +58,8 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
             super(itemView);
 //            mScalableLayout = (ScalableLayout) itemView.findViewById(R.id.scalablelayout_home_group_product);
 //            mLinearLayout = (LinearLayout) itemView.findViewById(R.id.layout_home_group_product);
-//            mImageView1 = (ImageView) itemView.findViewById(R.id.iv_home_group_product1);
-//            mImageView2 = (ImageView) itemView.findViewById(R.id.iv_home_group_product2);
+            mImageView1 = (ImageView) itemView.findViewById(R.id.iv_home_group_product1);
+            mImageView2 = (ImageView) itemView.findViewById(R.id.iv_home_group_product2);
         }
     }
 }

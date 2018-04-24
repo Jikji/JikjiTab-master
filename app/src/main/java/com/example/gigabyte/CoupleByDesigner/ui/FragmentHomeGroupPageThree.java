@@ -54,7 +54,7 @@ public class FragmentHomeGroupPageThree extends Fragment {
         mItems.add(new RecyclerViewHomeItem());
         mItems.add(new RecyclerViewHomeItem());
         mItems.add(new RecyclerViewHomeItem());
-        mItems.add(new RecyclerViewHomeItem());
-        mItems.add(new RecyclerViewHomeItem());
+
+        mRecyclerViewAdapter.notifyDataSetChanged();
     }
 }

@@ -46,14 +46,14 @@ public class FragmentHomeGroupPageOne extends Fragment {
         mRecyclerView = (RecyclerView) mRootView.findViewById(R.id.recyclerview_home_group_best);
         mLinearLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
-        mRecyclerViewAdapter = new RecyclerViewHomeAdapter(mItems);
+        mRecyclerViewAdapter = new RecyclerViewHomeAdapter(mItems, getContext());
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
     }
 
     private void initData() {
-        mItems.add(new RecyclerViewHomeItem());
-        mItems.add(new RecyclerViewHomeItem());
-        mItems.add(new RecyclerViewHomeItem());
+        mItems.add(new RecyclerViewHomeItem("http://i.imgur.com/nHyTdYh.jpg", "http://i.imgur.com/FOz72jc.jpg"));
+        mItems.add(new RecyclerViewHomeItem("http://i.imgur.com/nHyTdYh.jpg", "http://i.imgur.com/FOz72jc.jpg"));
+        mItems.add(new RecyclerViewHomeItem("http://i.imgur.com/nHyTdYh.jpg", "http://i.imgur.com/FOz72jc.jpg"));
 
         mRecyclerViewAdapter.notifyDataSetChanged();
     }

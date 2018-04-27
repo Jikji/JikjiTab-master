@@ -9,7 +9,6 @@
         android:id="@+id/scalablelayout_home_group_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         app:scale_base_height="624"
         app:scale_base_width="1080">
 
@@ -28,22 +27,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:layout_marginBottom="6dp"
-                android:layout_marginEnd="3dp"
-                android:layout_marginStart="6dp"
-                android:layout_marginTop="6dp"
-                android:layout_weight="1"/>
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"/>
 
             <ImageView
                 android:id="@+id/iv_home_group_product2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:layout_marginBottom="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="6dp"
-                android:layout_weight="1"/>
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"/>
         </LinearLayout>
 
     </com.ssomai.android.scalablelayout.ScalableLayout>

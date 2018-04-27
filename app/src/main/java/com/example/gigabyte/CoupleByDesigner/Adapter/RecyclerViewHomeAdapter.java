@@ -1,5 +1,6 @@
 package com.example.gigabyte.CoupleByDesigner.Adapter;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
 import com.example.gigabyte.CoupleByDesigner.Item.RecyclerViewHomeItem;
 import com.example.gigabyte.CoupleByDesigner.R;
 import com.ssomai.android.scalablelayout.ScalableLayout;
@@ -22,11 +24,12 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHomeAdapter.ItemViewHolder> {
 
-    ArrayList<RecyclerViewHomeItem> mItems = new ArrayList<>();
-    private Bitmap mBitmap;
+    ArrayList<RecyclerViewHomeItem> mItems;
+    private Context mContext;
 
-    public RecyclerViewHomeAdapter(ArrayList<RecyclerViewHomeItem> mItems) {
+    public RecyclerViewHomeAdapter(ArrayList<RecyclerViewHomeItem> mItems, Context mContext) {
         this.mItems = mItems;
+        this.mContext = mContext;
     }
 
     @Override
@@ -38,9 +41,13 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        holder.mImageView1.setImageResource(R.drawable.btn_home_grouplook);
-        holder.mImageView2.setImageResource(R.drawable.btn_home_grouplook);
+        Glide.with(mContext).
+                load(mItems.get(position).getmUrl1())
+                .into(holder.mImageView1);
 
+        Glide.with(mContext).
+                load(mItems.get(position).getmUrl2())
+                .into(holder.mImageView2);
     }
 
     @Override
@@ -49,15 +56,11 @@ public class RecyclerViewHomeAdapter extends RecyclerView.Adapter<RecyclerViewHo
     }
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
-        private ScalableLayout mScalableLayout;
-        private LinearLayout mLinearLayout;
         private ImageView mImageView1;
         private ImageView mImageView2;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-//            mScalableLayout = (ScalableLayout) itemView.findViewById(R.id.scalablelayout_home_group_product);
-//            mLinearLayout = (LinearLayout) itemView.findViewById(R.id.layout_home_group_product);
             mImageView1 = (ImageView) itemView.findViewById(R.id.iv_home_group_product1);
             mImageView2 = (ImageView) itemView.findViewById(R.id.iv_home_group_product2);
         }

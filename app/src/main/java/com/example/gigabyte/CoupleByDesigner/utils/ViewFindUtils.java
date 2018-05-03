@@ -18,6 +18,7 @@ public class ViewFindUtils
 	 * ImageView iv_demo = ViewHolderUtils.get(convertView, R.id.iv_demo);
 	 * </pre>
 	 */
+
 	public static <T extends View> T hold(View view, int id)
 	{
 		SparseArray<View> viewHolder = (SparseArray<View>) view.getTag();
@@ -40,7 +41,7 @@ public class ViewFindUtils
 	}
 
 	/**
-	 * 替代findviewById方法
+	 * findviewById를 쓰기 편하게 만듬.
 	 */
 	public static <T extends View> T find(View view, int id)
 	{

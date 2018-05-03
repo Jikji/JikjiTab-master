@@ -21,7 +21,6 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
 
     /**
      * 변수 선언
-     * private 위주
      * */
 
     private ImageView mImageViewAniLoading;
@@ -40,42 +39,26 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
     private Animation mAnimationMoveYTextView;
     private Animation mAnimationFadeInWidget;
     private Animation mAnimationFadeInBtnTheme;
-    public static int mSetTheme = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
 
+        // 데이터 초기화 메소드
         initData();
 
+        // 버튼들에 setOnCLickListener 이벤트를 달아줌
         mBtnLoadingLogin.setOnClickListener(this);
         mBtnLoadingNext.setOnClickListener(this);
         mBtnThemePink.setOnClickListener(this);
         mBtnThemeBlue.setOnClickListener(this);
         mBtnThemeOk.setOnClickListener(this);
 
+        // Gif를 페이드아웃함
         FadeOutGif();
 
-        mAnimationFadeoutWidget = AnimationUtils.loadAnimation(this, R.anim.fadeout_widget);
-        mAnimationFadeoutWidget.setFillAfter(true);
-        mAnimationFadeoutWidget.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                mBtnLoadingLogin.setVisibility(View.INVISIBLE);
-                FadeInThemeButton();
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
+        FadeOutGroupWidget();
     }
 
     private void initData() {
@@ -99,14 +82,18 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
         mAnimationMoveYTextView = AnimationUtils.loadAnimation(this, R.anim.translate);
         mAnimationFadeoutGif = AnimationUtils.loadAnimation(this, R.anim.fadeout);
         mAnimationFadeInWidget = AnimationUtils.loadAnimation(this, R.anim.fadein);
+        mAnimationFadeoutWidget = AnimationUtils.loadAnimation(this, R.anim.fadeout_widget);
+        mAnimationFadeInBtnTheme = AnimationUtils.loadAnimation(this, R.anim.fadein_themebtn);
     }
 
     // 페이드 아웃 메소드 + translate 애니메이션 구현
     private void FadeOutGif() {
 
+        //setFillAfter(true)를 적용해주어야 애니메이션이 실행된 후에 변경사항이 적용됨.
         mAnimationMoveYTextView.setFillAfter(true);
         mAnimationFadeoutGif.setFillAfter(true);
 
+        // mAnimationFadeoutGif에 애니메이션 리스너를 세팅한다.
         mAnimationFadeoutGif.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -115,7 +102,10 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
             
             @Override
             public void onAnimationEnd(Animation animation) {
+
+                // 애니메이션이 끝나면 View를 INVISIBLE(안보이게) 한다.
                 mImageViewAniLoading.setVisibility(View.INVISIBLE);
+                //Widget들을 FadeIn하는 메소드를 호출한다.
                 FadeInGroupWidget();
             }
 
@@ -124,7 +114,8 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
 
             }
         });
-        
+
+        // 5초 후 애니메이션을 시작함.
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -135,6 +126,7 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
         }, 5000);
     }
 
+    // 위젯들을 페이드 인 하는 메소드
     private void FadeInGroupWidget() {
 
         mAnimationFadeInWidget.setAnimationListener(new Animation.AnimationListener() {
@@ -143,6 +135,7 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
 
             }
 
+            // 애니메이션에 끝나면 mGroupLoadingWidget을 VISIBLE(보이게) 한다.
             @Override
             public void onAnimationEnd(Animation animation) {
                 mGroupLoadingWidget.setVisibility(View.VISIBLE);
@@ -154,6 +147,7 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
             }
         });
 
+        // Gif가 페이드아웃 되면 바로 시작
         Handler handler = new Handler();
         handler.post(new Runnable() {
             @Override
@@ -163,14 +157,42 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
         });
     }
 
+    // Widget들을 페이드 아웃 하는 메소드
+    private void FadeOutGroupWidget() {
+
+        // setFillAfter(true)로 해주어야 애니메이션 실행 후 변경사항이 적용된다.
+        mAnimationFadeoutWidget.setFillAfter(true);
+        // mAnimationFadeoutWidget의 이벤트를 구성한다.
+        mAnimationFadeoutWidget.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                // Fadeout 애니메이션이 끝나면 mBtnLoadingLogin의 상태를 INVISIBLE(안보이게) 한다.
+                mBtnLoadingLogin.setVisibility(View.INVISIBLE);
+                // 테마 선택 버튼을 페이드인한다.
+                FadeInThemeButton();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
+
+    // 테마 선택 버튼을 페이드인하는 메소드
     private void FadeInThemeButton() {
-        mAnimationFadeInBtnTheme = AnimationUtils.loadAnimation(this, R.anim.fadein_themebtn);
         mAnimationFadeInBtnTheme.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
             }
 
+            // 애니메이션이 끝나면 mGroupLoadingBtnTheme을 VISIBLE(보이게) 한다.
             @Override
             public void onAnimationEnd(Animation animation) {
                 mGroupLoadingBtnTheme.setVisibility(View.VISIBLE);
@@ -199,15 +221,11 @@ public class LoadingActivity extends Activity implements View.OnClickListener {
         } else if (v.getId() == R.id.btn_loading_next) {
             Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
             startActivity(intent);
-            // 이 액티비티를 닫음.
             finish();
         } else if (v.getId() == R.id.btn_theme_pink) {
             mActivityLoading.setBackgroundResource(R.color.colorPrimary_Pink);
-            mSetTheme = 0;
-
         } else if (v.getId() == R.id.btn_theme_blue) {
             mActivityLoading.setBackgroundResource(R.color.colorPrimary_Blue);
-            mSetTheme = 1;
         } else if (v.getId() == R.id.btn_theme_ok) {
             Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
             startActivity(intent);

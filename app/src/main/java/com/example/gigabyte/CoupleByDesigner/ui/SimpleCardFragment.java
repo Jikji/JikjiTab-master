@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import com.example.gigabyte.CoupleByDesigner.R;
 
-/** 이 코드는 아직 프래그먼트 만들어둔 게 없을 때 임시로 설정해줄 대체용 프래그먼트. */
+/**
+ * 이 코드는 아직 프래그먼트 만들어둔 게 없을 때 임시로 설정해줄 대체용 프래그먼트.
+ */
 
 @SuppressLint("ValidFragment")
 public class SimpleCardFragment extends Fragment {

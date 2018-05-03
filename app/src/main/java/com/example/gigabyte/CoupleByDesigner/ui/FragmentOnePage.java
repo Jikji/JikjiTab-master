@@ -27,12 +27,17 @@ import java.util.HashMap;
 public class FragmentOnePage extends Fragment implements View.OnClickListener
         , ViewPagerEx.OnPageChangeListener, BaseSliderView.OnSliderClickListener {
 
+
+    /**
+     *  변수 선언
+     */
     private SliderLayout mSliderLayout;
     private int[] mImageButtonID = { R.id.ib_home_best, R.id.ib_home_sale, R.id.ib_home_md };
     private ImageButton imageButton;
     private View mRootView;
     private static Context mContext;
 
+    // FragmentOnePage 생성자. 이렇게 만들면 객체를 한번 만들어두기 때문에 메모리 효율이 좋아진다.
     public static FragmentOnePage getInstance(Context context) {
         mContext = context;
         FragmentOnePage mFragOnePage = new FragmentOnePage();
@@ -42,6 +47,7 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
+        // fr_main_page_one.xml을 인플레이터하여 mRootView에 전달
         mRootView = inflater.inflate(R.layout.fr_main_page_one, container, false);
 
         // 각종 변수 초기화
@@ -49,20 +55,23 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener
         // 광고 스타트
         settingSliderLayout();
 
+        // mRootView를 반환하여 화면에 뿌릴 수 있다.
         return mRootView;
     }
 
     private void initData() {
 
+        // 반복문을 이용한 imageButton에 setOnClickListener 달아주기.
         for (int id : mImageButtonID) {
             imageButton = mRootView.findViewById(id);
             imageButton.setOnClickListener(this);
         }
 
+        // mSliderLayout에 sliderlayout_ad를 바인딩
         mSliderLayout = mRootView.findViewById(R.id.sliderlayout_ad);
     }
 
-    // 광고 이미지 슬라이더 메소드
+    // 광고 이미지 슬라이더 라이브러리 메소드
     private void settingSliderLayout() {
 
         HashMap<String,Integer> file_maps = new HashMap<String, Integer>();

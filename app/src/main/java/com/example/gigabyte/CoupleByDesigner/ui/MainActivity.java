@@ -62,33 +62,28 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (LoadingActivity.mSetTheme == 0) {
-            setTheme(R.style.AppTheme);
-        } else if (LoadingActivity.mSetTheme == 1) {
-            setTheme(R.style.AppTheme_Blue);
-        }
         setContentView(R.layout.activity_main);
 
         // 각종 데이터 초기화 (탭, 프래그먼트를 초기화함)
         initData();
 
-        // 액티비티에 붙어져 있는 뷰의 객체를 가져와서 decorView에 저장하는 듯하다.
-        View decorView = getWindow().getDecorView();
+        // 현재 윈도우의 DecorView를 View 객채인 decorView에 저장한다.
+        View mDecorView = getWindow().getDecorView();
         /*
-        ViewFindUtils의 find메소드로 decorView 객체와 뷰페이저의 id를 넘긴다.
-        참고로 ViewFindUtils에는 findViewId를 재정의하였음.
+        ViewFindUtils의 find메소드로 mDecorView와 뷰페이저의 id를 넘긴다.
+        ViewFindUtils.java에는 CustomTabLayout 라이브러리 제작자가 findViewById를 쉽게 사용하기 위해
+        findViewById를 재정의하였다.
          */
-        mViewPager = ViewFindUtils.find(decorView, R.id.vp_main_page);
-        // mAdapter에 프래그먼트 전환이 가능하도록 매니저를 달아준다.
+        mViewPager = ViewFindUtils.find(mDecorView, R.id.vp_main_page);
+        // mAdapter에 프래그먼트 전환이 가능하도록 세팅해준다.
         mAdapter = new MainPagerAdapter(getSupportFragmentManager());
-        // 전환이 가능한 어댑터를 ViewPager객체의 vp에 달아준다.
+        // 전환이 가능해진 어댑터를 ViewPager 객체의 mViewPager에 달아준다.
         mViewPager.setAdapter(mAdapter);
-        /* decorView + R.id.mTabLayout을 전달해서 mTapLayout에 activity_main에서 id가 mTabLayout인
-        레이아웃을 달아준다 */
-        mTabLayout = ViewFindUtils.find(decorView, R.id.mTabLayout);
-        // tab이랑 뷰페이저를 연동한다. mtitles 리스트랑 mTabEntities 리스트를 넘겨줌.
+        // activity_main.xml에 있는 탭 레이아웃을 mTabLayout이랑 바인딩한다.
+        mTabLayout = ViewFindUtils.find(mDecorView, R.id.mTabLayout);
+        // mTabLayout에 뷰페이저를 세팅한다. mtitles 리스트랑 mTabEntities 리스트를 넘겨줌.
         mTabLayout.setViewPager(mViewPager, mTitles, mTabEntities);
-        // 시작 화면을 0페이지에 맞춘다,
+        // 뷰 페이저 시작 화면을 0페이지로 설정,
         mViewPager.setCurrentItem(0);
     }
 
@@ -112,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         // 슬라이드 시킬 프래그먼트 갯수
         @Override
         public int getCount() {
-            //  mFragments가 ArrayList<> 형식이기 때문에 들어간 아이템 수 만큼 반환
+            //  mFragments에 들어간 아이템 수 만큼 반환
             return mFragments.size();
         }
 
@@ -135,12 +130,11 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
             /* new 키워드를 통해서 TabEntity 객체를 계속 생성한다. 객체가 생성될 때마다 호출되는
             생성자에 매개변수로 mTitles[i], mIconSelectId[i], mIconUnselected[i]를 전달한다.
-            그러면 각 TabEntity 객체에 전달받아 TabEntity안에 있는 변수에 저장한다.
-             */
+            그러면 각 TabEntity 객체에 전달받아 TabEntity안에 있는 변수에 저장한다. */
             mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIdsPink[i], mIconUnselectIds[i]));
         }
 
-        /* mFragments에 생성한 프래그먼트를 추가한다. */
+        /* mFragments에 만들어둔 프래그먼트를 추가한다. */
         mFragments.add(FragmentOnePage.getInstance(this));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[1]));
         mFragments.add(SimpleCardFragment.getInstance(mTitles[2]));

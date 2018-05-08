@@ -39,21 +39,9 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
     // 탭 제목 배열
     private final String[] mTitles = {
-            "홈", "이벤트 & 기획", "Couple 놀이터"
+            "HOME", "이벤트 & 기획", "에디터 TIP"
             , "유저 게시판", "제휴 문의"
     };
-
-    // 탭이 선택되지 않았을 때 보여줄 아이콘
-    private int[] mIconUnselectIds = {
-            R.mipmap.tab_home_unselect, R.mipmap.tab_event_unselect,
-            R.mipmap.tab_playground_unselect, R.mipmap.tab_bulletin_unselect,
-            R.mipmap.tab_cooperation_unselect};
-
-    // 탭이 선택되었을 때 보여줄 아이콘
-    private int[] mIconSelectIdsPink = {
-            R.mipmap.tab_home_select_pink, R.mipmap.tab_event_select_pink,
-            R.mipmap.tab_playground_select_pink, R.mipmap.tab_bulletin_select_pink,
-            R.mipmap.tab_cooperation_select_pink};
 
     // 메인 화면 프래그먼트 전환을 위한 페이저 어댑터 생성
     private MainPagerAdapter mAdapter;
@@ -131,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
             /* new 키워드를 통해서 TabEntity 객체를 계속 생성한다. 객체가 생성될 때마다 호출되는
             생성자에 매개변수로 mTitles[i], mIconSelectId[i], mIconUnselected[i]를 전달한다.
             그러면 각 TabEntity 객체에 전달받아 TabEntity안에 있는 변수에 저장한다. */
-            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIdsPink[i], mIconUnselectIds[i]));
+            mTabEntities.add(new TabEntity(mTitles[i]));
         }
 
         /* mFragments에 만들어둔 프래그먼트를 추가한다. */

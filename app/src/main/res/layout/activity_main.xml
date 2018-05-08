@@ -11,56 +11,37 @@
         android:layout_height="wrap_content"
         android:elevation="4dp"
         tl:scale_base_width="1080"
-        tl:scale_base_height="135">
+        tl:scale_base_height="150">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fff"
             tl:scale_width="1080"
-            tl:scale_height="135">
+            tl:scale_height="150">
 
             <ImageView
                 android:id="@+id/iv_actionbar_logo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:layout_gravity="center"
-                android:background="@drawable/img_actionbar_logo_pink" />
-
-            <EditText
-                android:id="@+id/et_actiobar_searchbar"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="6"
-                android:layout_gravity="center"
-                android:paddingStart="55dp"
-                android:paddingEnd="30dp"
-                android:hint="커디 : 너와 나를 위한 아이템"
-                android:textSize="11dp"
-                android:fontFamily="@font/nanumsquare_r"
-                android:inputType="text"
-                android:focusable="false"
-                android:clickable="false"
-                android:background="@drawable/edittext_actionbar_search_pink"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/img_actionbar_logo" />
 
             <ImageView
-                android:id="@+id/iv_actionbar_dipslist"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:background="@drawable/btn_actionbar_dipslist_pink" />
+                android:id="@+id/et_actiobar_searchbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/img_actionbar_character"/>
 
             <ImageView
                 android:id="@+id/iv_actionbar_myinfo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:background="@drawable/btn_actionbar_myinfo_pink" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/img_actionbar_search" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
@@ -85,14 +66,10 @@
                 android:id="@+id/mTabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tl:tl_iconHeight="18dp"
-                tl:tl_iconLeftMargin="13dp"
-                tl:tl_iconMargin="-10dp"
-                tl:tl_iconWidth="18dp"
                 tl:tl_indicator_color="#FA5858"
                 tl:tl_indicator_style="TRIANGLE"
-                tl:tl_indicator_width="15dp"
-                tl:tl_indicator_height="7dp"
+                tl:tl_indicator_width="12dp"
+                tl:tl_indicator_height="5dp"
                 tl:tl_underline_height="2dp"
                 tl:tl_underline_color="#fff"/>
 
@@ -102,7 +79,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="7dp">
 
         <LinearLayout
             android:id="@+id/layout_tab_bottom"

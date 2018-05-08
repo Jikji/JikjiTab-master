@@ -99,6 +99,7 @@ public class FragmentOnePage extends Fragment implements View.OnClickListener
         mSliderLayout.setPresetTransformer(SliderLayout.Transformer.Default);
         mSliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
         mSliderLayout.setIndicatorVisibility(PagerIndicator.IndicatorVisibility.Visible);
+        mSliderLayout.setDuration(5000);
         mSliderLayout.addOnPageChangeListener(this);
     }
 

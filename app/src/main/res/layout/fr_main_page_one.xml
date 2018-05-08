@@ -4,7 +4,6 @@
     android:layout_height="match_parent">
 
 
-
     <ScrollView
         android:id="@+id/scrollView_main"
         android:layout_width="match_parent"
@@ -21,15 +20,14 @@
                 android:id="@+id/layout_vp_fragment_ad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                app:scale_base_height="546"
+                app:scale_base_height="540"
                 app:scale_base_width="1080">
 
                 <com.daimajia.slider.library.SliderLayout
                     android:id="@+id/sliderlayout_ad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:scale_height="546"
+                    app:scale_height="540"
                     app:scale_width="1080" />
 
             </com.ssomai.android.scalablelayout.ScalableLayout>
@@ -38,9 +36,9 @@
             <LinearLayout
                 android:id="@+id/layout_home_best"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="40dp"
                 android:layout_below="@id/layout_vp_fragment_ad"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:background="#fff"
                 android:orientation="horizontal">
 
@@ -48,8 +46,8 @@
                     android:id="@+id/ib_home_best"
                     android:layout_width="110dp"
                     android:layout_height="20dp"
-                    android:layout_marginStart="10dp"
                     android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
                     android:background="@drawable/btn_home_best" />
             </LinearLayout>
 
@@ -60,21 +58,19 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_home_best"
                 android:background="#fff"
-                app:scale_base_height="405"
+                app:scale_base_height="480"
                 app:scale_base_width="1080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_height="405"
+                    app:scale_height="480"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_best1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginStart="5.25dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
@@ -82,9 +78,6 @@
                         android:id="@+id/ib_home_best2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginEnd="5.25dp"
-                        android:layout_marginStart="5.25dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
@@ -92,8 +85,6 @@
                         android:id="@+id/ib_home_best3"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginEnd="5.25dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
@@ -105,9 +96,9 @@
             <LinearLayout
                 android:id="@+id/layout_home_sale"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="40dp"
                 android:layout_below="@id/layout_home_best_group"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:background="#fff"
                 android:orientation="horizontal">
 
@@ -115,8 +106,8 @@
                     android:id="@+id/ib_home_sale"
                     android:layout_width="136dp"
                     android:layout_height="20dp"
+                    android:layout_gravity="center"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="8dp"
                     android:background="@drawable/btn_home_sale" />
             </LinearLayout>
 
@@ -127,21 +118,19 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_home_sale"
                 android:background="#fff"
-                app:scale_base_height="405"
+                app:scale_base_height="480"
                 app:scale_base_width="1080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_height="405"
+                    app:scale_height="480"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_sale1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginStart="5.25dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
@@ -149,9 +138,6 @@
                         android:id="@+id/ib_home_sale2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginEnd="5.25dp"
-                        android:layout_marginStart="5.25dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
@@ -159,8 +145,6 @@
                         android:id="@+id/ib_home_sale3"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginEnd="5.25dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
@@ -172,9 +156,9 @@
             <LinearLayout
                 android:id="@+id/layout_home_md"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="40dp"
                 android:layout_below="@id/layout_home_sale_group"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:background="#fff"
                 android:orientation="horizontal">
 
@@ -183,7 +167,7 @@
                     android:layout_width="125dp"
                     android:layout_height="20dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/btn_home_md" />
             </LinearLayout>
 
@@ -194,21 +178,19 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_home_md"
                 android:background="#fff"
-                app:scale_base_height="405"
+                app:scale_base_height="480"
                 app:scale_base_width="1080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_height="405"
+                    app:scale_height="480"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_md1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginStart="5.25dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
@@ -216,9 +198,6 @@
                         android:id="@+id/ib_home_md2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginEnd="5.25dp"
-                        android:layout_marginStart="5.25dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
@@ -226,8 +205,6 @@
                         android:id="@+id/ib_home_md3"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginEnd="5.25dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
@@ -240,17 +217,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_home_md_group"
-                android:layout_marginTop="5dp"
-                app:scale_base_height="624"
+                android:layout_marginTop="7dp"
+                app:scale_base_height="720"
                 app:scale_base_width="1080">
 
                 <!--home product 첫번째 줄-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="208dp"
+                    android:layout_height="wrap_content"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="624"
+                    app:scale_height="720"
                     app:scale_width="1080">
 
                     <ImageButton
@@ -258,10 +235,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="3dp"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
@@ -270,10 +243,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:layout_marginStart="3dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>
@@ -287,17 +256,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_home_product1"
-                android:layout_marginTop="5dp"
-                app:scale_base_height="624"
+                android:layout_marginTop="7dp"
+                app:scale_base_height="720"
                 app:scale_base_width="1080">
 
                 <!--home product 첫번째 줄-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="208dp"
+                    android:layout_height="wrap_content"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="624"
+                    app:scale_height="720"
                     app:scale_width="1080">
 
                     <ImageButton
@@ -305,10 +274,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="3dp"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
@@ -317,10 +282,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:layout_marginStart="3dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>
@@ -333,17 +294,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_home_product2"
-                android:layout_marginTop="5dp"
-                app:scale_base_height="624"
+                android:layout_marginTop="7dp"
+                app:scale_base_height="720"
                 app:scale_base_width="1080">
 
                 <!--home product 첫번째 줄-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="208dp"
+                    android:layout_height="wrap_content"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="624"
+                    app:scale_height="720"
                     app:scale_width="1080">
 
                     <ImageButton
@@ -351,10 +312,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="3dp"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
@@ -363,10 +320,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:layout_marginStart="3dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>
@@ -379,8 +332,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_home_product3"
-                android:layout_marginTop="5dp"
-                app:scale_base_height="624"
+                android:layout_marginTop="7dp"
+                app:scale_base_height="720"
                 app:scale_base_width="1080">
 
                 <!--home product 첫번째 줄-->
@@ -389,7 +342,7 @@
                     android:layout_height="208dp"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="624"
+                    app:scale_height="720"
                     app:scale_width="1080">
 
                     <ImageButton
@@ -397,10 +350,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="3dp"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
@@ -409,10 +358,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:layout_marginStart="3dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>
@@ -425,8 +370,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_home_product4"
-                android:layout_marginTop="5dp"
-                app:scale_base_height="624"
+                android:layout_marginTop="7dp"
+                app:scale_base_height="720"
                 app:scale_base_width="1080">
 
                 <!--home product 첫번째 줄-->
@@ -435,7 +380,7 @@
                     android:layout_height="208dp"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="624"
+                    app:scale_height="720"
                     app:scale_width="1080">
 
                     <ImageButton
@@ -443,10 +388,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="3dp"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
@@ -455,10 +396,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="6dp"
-                        android:layout_marginStart="3dp"
-                        android:layout_marginTop="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>

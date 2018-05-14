@@ -3,12 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ScrollView
         android:id="@+id/scrollView_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/layout_tab_bottom"
         android:fillViewport="true">
 
         <LinearLayout
@@ -21,7 +19,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:scale_base_height="540"
-                app:scale_base_width="1080">
+                app:scale_base_width="1080"
+                android:layout_marginTop="7dp">
 
                 <com.daimajia.slider.library.SliderLayout
                     android:id="@+id/sliderlayout_ad"

@@ -68,11 +68,12 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         // 전환이 가능해진 어댑터를 ViewPager 객체의 mViewPager에 달아준다.
         mViewPager.setAdapter(mAdapter);
         // activity_main.xml에 있는 탭 레이아웃을 mTabLayout이랑 바인딩한다.
-        mTabLayout = ViewFindUtils.find(mDecorView, R.id.mTabLayout);
+        mTabLayout = ViewFindUtils.find(mDecorView, R.id.tabLayout_main);
         // mTabLayout에 뷰페이저를 세팅한다. mtitles 리스트랑 mTabEntities 리스트를 넘겨줌.
         mTabLayout.setViewPager(mViewPager, mTitles, mTabEntities);
         // 뷰 페이저 시작 화면을 0페이지로 설정,
         mViewPager.setCurrentItem(0);
+
     }
 
     @Override

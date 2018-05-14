@@ -102,7 +102,7 @@ public class HomeGroupActivity extends AppCompatActivity {
 
     private void settingViewPager() {
 
-        mCommonTabLayout = (CommonTabLayout) findViewById(R.id.tablayout_group);
+        mCommonTabLayout = (CommonTabLayout) findViewById(R.id.tablayout_home_group);
         mCommonTabLayout.setTabData(mTabEntities);
         mViewPager = (ViewPager) findViewById(R.id.vp_home_group_page);
         mAdapter = new HomeGroupPagerAdapter(getSupportFragmentManager());

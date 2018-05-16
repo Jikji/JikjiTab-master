@@ -14,8 +14,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:minHeight="?attr/actionBarSize"
+            android:background="#fff"
             android:elevation="4dp"
+            android:minHeight="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -63,62 +64,72 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
+            <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_main_tab_bottom"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentBottom="true"
-                android:background="#fff"
+                android:layout_height="wrap_content"
+                android:background="#FAFAFA"
                 android:elevation="4dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                app:scale_base_height="141"
+                app:scale_base_width="1080">
 
-                <ImageView
-                    android:id="@+id/iv_main_tab_bottom_home"
-                    android:layout_width="33dp"
-                    android:layout_height="33dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_weight="1"
-                    android:src="@mipmap/btn_bottom_home_select" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:scale_height="141"
+                    app:scale_width="1080">
 
-                <ImageView
-                    android:id="@+id/iv_main_tab_bottom_couple"
-                    android:layout_width="33dp"
-                    android:layout_height="33dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_weight="1"
-                    android:src="@mipmap/btn_bottom_couple_unselect" />
+                    <ImageView
+                        android:id="@+id/iv_main_tab_bottom_home"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/btn_bottom_home_select" />
 
-                <ImageView
-                    android:id="@+id/iv_main_tab_bottom_day"
-                    android:layout_width="33dp"
-                    android:layout_height="33dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_weight="1"
-                    android:src="@mipmap/btn_bottom_day_unselect" />
+                    <ImageView
+                        android:id="@+id/iv_main_tab_bottom_couple"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/btn_bottom_all_unselect" />
 
-                <ImageView
-                    android:id="@+id/iv_main_tab_bottom_some"
-                    android:layout_width="33dp"
-                    android:layout_height="33dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_weight="1"
-                    android:src="@mipmap/btn_bottom_some_unselect" />
+                    <ImageView
+                        android:id="@+id/iv_main_tab_bottom_day"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/btn_bottom_myinfo_unselect" />
 
-                <ImageView
-                    android:id="@+id/iv_main_tab_bottom_all"
-                    android:layout_width="33dp"
-                    android:layout_height="33dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_weight="1"
-                    android:src="@mipmap/btn_bottom_all_unselect" />
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/iv_main_tab_bottom_some"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/btn_bottom_cart_unselect" />
+
+                    <ImageView
+                        android:id="@+id/iv_main_tab_bottom_all"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/btn_bottom_top_unselect" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/vp_main_page"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_above="@id/layout_main_tab_bottom"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         </RelativeLayout>
 

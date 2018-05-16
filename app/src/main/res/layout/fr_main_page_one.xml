@@ -3,24 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--스크롤할 Content (NestedScrollView를 적용해주어야 액션바가 반응함)-->
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/scrollView_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-        <LinearLayout
+        <!--ScrollView 안에 Layout을 하나 생성해주어야 버그 발생 안함-->
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--광고창-->
             <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_vp_fragment_ad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
                 app:scale_base_height="540"
-                app:scale_base_width="1080"
-                android:layout_marginTop="7dp">
+                app:scale_base_width="1080">
 
                 <com.daimajia.slider.library.SliderLayout
                     android:id="@+id/sliderlayout_ad"
@@ -32,57 +35,60 @@
             </com.ssomai.android.scalablelayout.ScalableLayout>
 
             <!--home best 이미지버튼-->
-            <LinearLayout
+            <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_home_best"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/layout_vp_fragment_ad"
                 android:layout_marginTop="7dp"
                 android:background="#fff"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:scale_base_height="120"
+                app:scale_base_width="1080">
 
                 <ImageButton
                     android:id="@+id/ib_home_best"
-                    android:layout_width="110dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/btn_home_best" />
-            </LinearLayout>
+                    android:background="@drawable/btn_home_best"
+                    app:scale_height="120"
+                    app:scale_width="1080" />
+            </com.ssomai.android.scalablelayout.ScalableLayout>
 
-            <!--home best 목록 이미지 버튼-->
+            <!--home best 상품 목록 이미지 칸-->
             <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_home_best_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_home_best"
                 android:background="#fff"
-                app:scale_base_height="480"
+                app:scale_base_height="360"
                 app:scale_base_width="1080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_height="480"
+                    app:scale_height="360"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_best1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
                     <ImageButton
                         android:id="@+id/ib_home_best2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
                     <ImageButton
                         android:id="@+id/ib_home_best3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
@@ -91,58 +97,102 @@
 
             </com.ssomai.android.scalablelayout.ScalableLayout>
 
-            <!--home sale 이미지 버튼-->
-            <LinearLayout
+            <!--home best 상품 목록 설명 칸-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_best_group_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_home_best_group"
+                android:background="#fff"
+                app:scale_base_width="1080"
+                app:scale_base_height="120">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:scale_width="1080"
+                    app:scale_height="360">
+
+                    <ImageView
+                        android:id="@+id/ib_home_best_text1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook_text"/>
+
+                    <ImageView
+                        android:id="@+id/ib_home_best_text2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook_text"/>
+
+                    <ImageView
+                        android:id="@+id/ib_home_best_text3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook_text"/>
+
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home sale 이미지버튼-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_home_sale"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_below="@id/layout_home_best_group"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_home_best_group_text"
                 android:layout_marginTop="7dp"
                 android:background="#fff"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:scale_base_height="120"
+                app:scale_base_width="1080">
 
                 <ImageButton
                     android:id="@+id/ib_home_sale"
-                    android:layout_width="136dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/btn_home_sale" />
-            </LinearLayout>
+                    android:background="@drawable/btn_home_sale"
+                    app:scale_height="120"
+                    app:scale_width="1080" />
+            </com.ssomai.android.scalablelayout.ScalableLayout>
 
-            <!--home sale 목록 이미지 버튼 -->
+            <!--home best 상품 목록 이미지 칸-->
             <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_home_sale_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_home_sale"
                 android:background="#fff"
-                app:scale_base_height="480"
+                app:scale_base_height="360"
                 app:scale_base_width="1080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_height="480"
+                    app:scale_height="360"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_sale1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
                     <ImageButton
                         android:id="@+id/ib_home_sale2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
                     <ImageButton
                         android:id="@+id/ib_home_sale3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
@@ -151,58 +201,102 @@
 
             </com.ssomai.android.scalablelayout.ScalableLayout>
 
-            <!--home md 이미지 버튼-->
-            <LinearLayout
+            <!--home sale 상품 목록 설명 칸-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_sale_group_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_home_sale_group"
+                android:background="#fff"
+                app:scale_base_width="1080"
+                app:scale_base_height="120">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:scale_width="1080"
+                    app:scale_height="360">
+
+                    <ImageView
+                        android:id="@+id/ib_home_sale_text1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook_text"/>
+
+                    <ImageView
+                        android:id="@+id/ib_home_sale_text2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook_text"/>
+
+                    <ImageView
+                        android:id="@+id/ib_home_sale_text3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook_text"/>
+
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home md 이미지버튼-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_home_md"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_below="@id/layout_home_sale_group"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_home_sale_group_text"
                 android:layout_marginTop="7dp"
                 android:background="#fff"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:scale_base_height="120"
+                app:scale_base_width="1080">
 
                 <ImageButton
                     android:id="@+id/ib_home_md"
-                    android:layout_width="125dp"
-                    android:layout_height="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/btn_home_md" />
-            </LinearLayout>
+                    android:background="@drawable/btn_home_md"
+                    app:scale_height="120"
+                    app:scale_width="1080" />
+            </com.ssomai.android.scalablelayout.ScalableLayout>
 
-            <!--home md 목록 이미지 버튼-->
+            <!--home md 상품 목록 이미지 칸-->
             <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_home_md_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_home_md"
                 android:background="#fff"
-                app:scale_base_height="480"
+                app:scale_base_height="360"
                 app:scale_base_width="1080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_height="480"
+                    app:scale_height="360"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_md1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
                     <ImageButton
                         android:id="@+id/ib_home_md2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
 
                     <ImageButton
                         android:id="@+id/ib_home_md3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_grouplook" />
@@ -211,197 +305,393 @@
 
             </com.ssomai.android.scalablelayout.ScalableLayout>
 
+            <!--home md 상품 목록 설명 칸-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_md_group_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_home_md_group"
+                android:background="#fff"
+                app:scale_base_width="1080"
+                app:scale_base_height="120">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:scale_width="1080"
+                    app:scale_height="360">
+
+                    <ImageView
+                        android:id="@+id/ib_home_md_text1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook_text"/>
+
+                    <ImageView
+                        android:id="@+id/ib_home_md_text2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook_text"/>
+
+                    <ImageView
+                        android:id="@+id/ib_home_md_text3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_grouplook_text"/>
+
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home product 첫번째 칸 레이아웃-->
             <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_home_product1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_home_md_group"
+                android:layout_below="@+id/layout_home_md_group_text"
                 android:layout_marginTop="7dp"
-                app:scale_base_height="720"
+                app:scale_base_height="540"
                 app:scale_base_width="1080">
 
-                <!--home product 첫번째 줄-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="720"
+                    app:scale_height="540"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_product1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
                     <ImageButton
                         android:id="@+id/ib_home_product2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>
 
             </com.ssomai.android.scalablelayout.ScalableLayout>
 
-
-            <!--home product 두번째 줄-->
+            <!--home product 첫번째 텍스트 칸 레이아웃-->
             <com.ssomai.android.scalablelayout.ScalableLayout
-                android:id="@+id/layout_home_product2"
+                android:id="@+id/layout_home_product1_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_home_product1"
-                android:layout_marginTop="7dp"
-                app:scale_base_height="720"
+                app:scale_base_height="180"
                 app:scale_base_width="1080">
 
-                <!--home product 첫번째 줄-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="720"
+                    app:scale_height="180"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product1_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product2_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home product 두번쩨 칸 레이아웃-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_product1_text"
+                android:layout_marginTop="7dp"
+                app:scale_base_height="540"
+                app:scale_base_width="1080">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="540"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_product3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
                     <ImageButton
                         android:id="@+id/ib_home_product4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>
 
             </com.ssomai.android.scalablelayout.ScalableLayout>
 
-            <!--home product 세번째 줄-->
+            <!--home product 두번째 텍스트 칸 레이아웃-->
             <com.ssomai.android.scalablelayout.ScalableLayout
-                android:id="@+id/layout_home_product3"
+                android:id="@+id/layout_home_product2_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_home_product2"
-                android:layout_marginTop="7dp"
-                app:scale_base_height="720"
+                app:scale_base_height="180"
                 app:scale_base_width="1080">
 
-                <!--home product 첫번째 줄-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="720"
+                    app:scale_height="180"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product3_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product4_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home product 세번째 칸 레이아웃-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_product2_text"
+                android:layout_marginTop="7dp"
+                app:scale_base_height="540"
+                app:scale_base_width="1080">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="540"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_product5"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
                     <ImageButton
                         android:id="@+id/ib_home_product6"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>
 
             </com.ssomai.android.scalablelayout.ScalableLayout>
 
-            <!--home product 네번째 줄-->
+            <!--home product 세번째 텍스트 칸 레이아웃-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product3_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_product3"
+                app:scale_base_height="180"
+                app:scale_base_width="1080">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="180"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product5_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product6_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home product 네번째 칸 레이아웃-->
             <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_home_product4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_home_product3"
+                android:layout_below="@+id/layout_home_product3_text"
                 android:layout_marginTop="7dp"
-                app:scale_base_height="720"
+                app:scale_base_height="540"
                 app:scale_base_width="1080">
 
-                <!--home product 첫번째 줄-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="208dp"
+                    android:layout_height="wrap_content"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="720"
+                    app:scale_height="540"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_product7"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
                     <ImageButton
                         android:id="@+id/ib_home_product8"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>
 
             </com.ssomai.android.scalablelayout.ScalableLayout>
 
-            <!--home product 다섯번쩨 줄-->
+            <!--home product 두번째 텍스트 칸 레이아웃-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product4_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_product4"
+                app:scale_base_height="180"
+                app:scale_base_width="1080">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="180"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product7_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product8_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+            <!--home product 다섯번째 칸 레이아웃-->
             <com.ssomai.android.scalablelayout.ScalableLayout
                 android:id="@+id/layout_home_product5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_home_product4"
+                android:layout_below="@+id/layout_home_product4_text"
                 android:layout_marginTop="7dp"
-                app:scale_base_height="720"
+                app:scale_base_height="540"
                 app:scale_base_width="1080">
 
-                <!--home product 첫번째 줄-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="208dp"
+                    android:layout_height="wrap_content"
                     android:background="#fff"
                     android:orientation="horizontal"
-                    app:scale_height="720"
+                    app:scale_height="540"
                     app:scale_width="1080">
 
                     <ImageButton
                         android:id="@+id/ib_home_product9"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
 
                     <ImageButton
                         android:id="@+id/ib_home_product10"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/btn_home_product" />
                 </LinearLayout>
 
             </com.ssomai.android.scalablelayout.ScalableLayout>
 
-        </LinearLayout>
+            <!--home product 다섯번째 텍스트 칸 레이아웃-->
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:id="@+id/layout_home_product5_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_home_product5"
+                app:scale_base_height="180"
+                app:scale_base_width="1080">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    app:scale_height="180"
+                    app:scale_width="1080">
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product9_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+
+                    <ImageButton
+                        android:id="@+id/ib_home_product10_text"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_home_product_text" />
+                </LinearLayout>
+
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+
+        </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>
 

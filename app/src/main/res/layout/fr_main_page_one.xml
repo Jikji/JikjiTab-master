@@ -1,14 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <!--스크롤할 Content (NestedScrollView를 적용해주어야 액션바가 반응함)-->
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/scrollView_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
         <!--ScrollView 안에 Layout을 하나 생성해주어야 버그 발생 안함-->
         <RelativeLayout
@@ -104,35 +99,35 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_home_best_group"
                 android:background="#fff"
-                app:scale_base_width="1080"
-                app:scale_base_height="120">
+                app:scale_base_height="120"
+                app:scale_base_width="1080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_width="1080"
-                    app:scale_height="360">
+                    app:scale_height="360"
+                    app:scale_width="1080">
 
                     <ImageView
                         android:id="@+id/ib_home_best_text1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_home_grouplook_text"/>
+                        android:background="@drawable/btn_home_grouplook_text" />
 
                     <ImageView
                         android:id="@+id/ib_home_best_text2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_home_grouplook_text"/>
+                        android:background="@drawable/btn_home_grouplook_text" />
 
                     <ImageView
                         android:id="@+id/ib_home_best_text3"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_home_grouplook_text"/>
+                        android:background="@drawable/btn_home_grouplook_text" />
 
                 </LinearLayout>
 
@@ -208,35 +203,35 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_home_sale_group"
                 android:background="#fff"
-                app:scale_base_width="1080"
-                app:scale_base_height="120">
+                app:scale_base_height="120"
+                app:scale_base_width="1080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_width="1080"
-                    app:scale_height="360">
+                    app:scale_height="360"
+                    app:scale_width="1080">
 
                     <ImageView
                         android:id="@+id/ib_home_sale_text1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_home_grouplook_text"/>
+                        android:background="@drawable/btn_home_grouplook_text" />
 
                     <ImageView
                         android:id="@+id/ib_home_sale_text2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_home_grouplook_text"/>
+                        android:background="@drawable/btn_home_grouplook_text" />
 
                     <ImageView
                         android:id="@+id/ib_home_sale_text3"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_home_grouplook_text"/>
+                        android:background="@drawable/btn_home_grouplook_text" />
 
                 </LinearLayout>
 
@@ -312,35 +307,35 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/layout_home_md_group"
                 android:background="#fff"
-                app:scale_base_width="1080"
-                app:scale_base_height="120">
+                app:scale_base_height="120"
+                app:scale_base_width="1080">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:scale_width="1080"
-                    app:scale_height="360">
+                    app:scale_height="360"
+                    app:scale_width="1080">
 
                     <ImageView
                         android:id="@+id/ib_home_md_text1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_home_grouplook_text"/>
+                        android:background="@drawable/btn_home_grouplook_text" />
 
                     <ImageView
                         android:id="@+id/ib_home_md_text2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_home_grouplook_text"/>
+                        android:background="@drawable/btn_home_grouplook_text" />
 
                     <ImageView
                         android:id="@+id/ib_home_md_text3"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/btn_home_grouplook_text"/>
+                        android:background="@drawable/btn_home_grouplook_text" />
 
                 </LinearLayout>
 
@@ -693,6 +688,4 @@
 
         </RelativeLayout>
 
-    </android.support.v4.widget.NestedScrollView>
-
-</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

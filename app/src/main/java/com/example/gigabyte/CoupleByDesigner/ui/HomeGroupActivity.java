@@ -4,8 +4,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.View;
 
 import com.example.gigabyte.CoupleByDesigner.R;
 import com.example.gigabyte.CoupleByDesigner.entity.TabEntity;
@@ -22,12 +27,6 @@ public class HomeGroupActivity extends AppCompatActivity {
     private CommonTabLayout mCommonTabLayout;
     private ViewPager mViewPager;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-    private int[] mIconUnselectIds = {
-            R.mipmap.tab_grouplook_best_unselect, R.mipmap.tab_grouplook_sale_unselect,
-            R.mipmap.tab_grouplook_md_unselect};
-    private int[] mIconSelectIds = {
-            R.mipmap.tab_grouplook_best_select_pink, R.mipmap.tab_grouplook_sale_select_pink,
-            R.mipmap.tab_grouplook_md_select_pink};
     private HomeGroupPagerAdapter mAdapter;
     public static int mPositionStartTab = 0;
 
@@ -67,6 +66,29 @@ public class HomeGroupActivity extends AppCompatActivity {
 
             }
         });
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_home_group);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        ActionBar ab = getSupportActionBar();
+
+        ab.setDisplayShowCustomEnabled(true);
+        ab.setDisplayHomeAsUpEnabled(false);
+        ab.setDisplayShowTitleEnabled(false);
+        ab.setDisplayShowHomeEnabled(false);
+
+        LayoutInflater layoutInflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
+        View actionbar = layoutInflater.inflate(R.layout.custom_actionbar, null);
+
+        ab.setCustomView(actionbar);
+
+        Toolbar parent = (Toolbar)actionbar.getParent();
+        parent.setContentInsetsAbsolute(0,0);
+
+        return true;
     }
 
     private class HomeGroupPagerAdapter extends FragmentPagerAdapter {
@@ -96,7 +118,7 @@ public class HomeGroupActivity extends AppCompatActivity {
         mFragments.add(FragmentHomeGroupPageThree.getInstance(this));
 
         for (int i = 0; i < mTitles.length; i++) {
-            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
+            mTabEntities.add(new TabEntity(mTitles[i]));
         }
     }
 
@@ -104,7 +126,7 @@ public class HomeGroupActivity extends AppCompatActivity {
 
         mCommonTabLayout = (CommonTabLayout) findViewById(R.id.tablayout_home_group);
         mCommonTabLayout.setTabData(mTabEntities);
-        mViewPager = (ViewPager) findViewById(R.id.vp_home_group_page);
+        mViewPager = (ViewPager) findViewById(R.id.vp_group);
         mAdapter = new HomeGroupPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
         mCommonTabLayout.setCurrentTab(mPositionStartTab);

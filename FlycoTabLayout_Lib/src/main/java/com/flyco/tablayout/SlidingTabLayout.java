@@ -146,7 +146,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.SlidingTabLayout);
 
         mIndicatorStyle = ta.getInt(R.styleable.SlidingTabLayout_tl_indicator_style, STYLE_NORMAL);
-        mIndicatorColor = ta.getColor(R.styleable.SlidingTabLayout_tl_indicator_color, Color.parseColor(mIndicatorStyle == STYLE_BLOCK ? "#4B6A87" : "#ffffff"));
+        mIndicatorColor = ta.getColor(R.styleable.SlidingTabLayout_tl_indicator_color, Color.parseColor(mIndicatorStyle == STYLE_BLOCK ? "#ffffff" : "#E5310B"));
         mIndicatorHeight = ta.getDimension(R.styleable.SlidingTabLayout_tl_indicator_height,
                 dp2px(mIndicatorStyle == STYLE_TRIANGLE ? 4 : (mIndicatorStyle == STYLE_BLOCK ? -1 : 2)));
         mIndicatorWidth = ta.getDimension(R.styleable.SlidingTabLayout_tl_indicator_width, dp2px(mIndicatorStyle == STYLE_TRIANGLE ? 10 : -1));
@@ -167,8 +167,8 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         mDividerPadding = ta.getDimension(R.styleable.SlidingTabLayout_tl_divider_padding, dp2px(12));
 
         mTextsize = ta.getDimension(R.styleable.SlidingTabLayout_tl_textsize, sp2px(12));
-        mTextSelectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textSelectColor, Color.parseColor("#ff305b"));
-        mTextUnselectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textUnselectColor, Color.parseColor("#9d9d9d"));
+        mTextSelectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textSelectColor, Color.parseColor("#E5310B"));
+        mTextUnselectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textUnselectColor, Color.parseColor("#9D9D9D"));
         mTextBold = ta.getInt(R.styleable.SlidingTabLayout_tl_textBold, TEXT_BOLD_NONE);
         mTextAllCaps = ta.getBoolean(R.styleable.SlidingTabLayout_tl_textAllCaps, false);
 
@@ -178,8 +178,8 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
 
         mIconWidth = ta.getDimension(R.styleable.SlidingTabLayout_tl_iconWidth, dp2px(0));
         mIconHeight = ta.getDimension(R.styleable.SlidingTabLayout_tl_iconHeight, dp2px(0));
-        mIconMargin = ta.getDimension(R.styleable.SlidingTabLayout_tl_iconMargin, dp2px(2.5f));
-        mIconLeftMargin = ta.getDimension(R.styleable.SlidingTabLayout_tl_iconLeftMargin, dp2px(2.5f));
+        mIconMargin = ta.getDimension(R.styleable.SlidingTabLayout_tl_iconMargin, dp2px(0));
+        mIconLeftMargin = ta.getDimension(R.styleable.SlidingTabLayout_tl_iconLeftMargin, dp2px(0));
 
         ta.recycle();
     }
